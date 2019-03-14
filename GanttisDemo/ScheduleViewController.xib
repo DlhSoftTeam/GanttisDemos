@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ScheduleViewController" customModule="GanttisDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="dayFinishTimePicker" destination="52j-le-XD2" id="VYC-JK-70H"/>
+                <outlet property="dayStartTimePicker" destination="aby-kn-8PU" id="TMR-1p-hs1"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qc6-LT-zYt">
+                    <rect key="frame" x="-2" y="104" width="106" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="Week starting on" id="Kn3-NM-cSM">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfM-J5-qd3">
+                    <rect key="frame" x="107" y="99" width="182" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Sunday" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="1sl-Jb-c98" id="F7G-91-2ec">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="wXJ-4w-v3a">
+                            <items>
+                                <menuItem title="Sunday" state="on" id="1sl-Jb-c98"/>
+                                <menuItem title="Monday" id="VhU-UX-0Ym">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Tuesday" id="uwT-b8-yyJ">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Wednesday" id="OfT-eb-heY">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Thursday" id="NuZ-Tk-MeA">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Friday" id="FGm-3R-0R0">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Saturday" id="OZl-1W-hdL">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="Z9B-kI-jQN"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="weekStart" id="0rM-Of-fRx"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMW-fP-JZa">
+                    <rect key="frame" x="-2" y="78" width="106" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="and finishing on" id="bp7-Sd-FP2">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxw-oz-GYT">
+                    <rect key="frame" x="107" y="73" width="182" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Saturday" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Wc3-sY-v7q" id="Twh-fH-hbg">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="2XV-mr-hQQ">
+                            <items>
+                                <menuItem title="Sunday" id="yxe-N0-m0Q"/>
+                                <menuItem title="Monday" id="x0a-zg-XuA">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Tuesday" id="Uok-G0-oFF">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Wednesday" id="gEl-aD-Tr5">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Thursday" id="Ors-HP-b6q">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Friday" id="u1q-8l-krW">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Saturday" state="on" id="Wc3-sY-v7q">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="dba-yp-JOJ"/>
+                        <binding destination="-2" name="selectedIndex" keyPath="weekFinish" id="DYv-LY-MN7"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25g-4L-83e">
+                    <rect key="frame" x="-2" y="50" width="106" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="Day starting at" id="tGa-CK-REx">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aby-kn-8PU">
+                    <rect key="frame" x="110" y="47" width="177" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="uD0-xq-3jg">
+                        <font key="font" metaFont="smallSystem"/>
+                        <date key="date" timeIntervalSinceReferenceDate="-64800">
+                            <!--2000-12-31 06:00:00 +0000-->
+                        </date>
+                        <date key="minDate" timeIntervalSinceReferenceDate="-93600">
+                            <!--2000-12-30 22:00:00 +0000-->
+                        </date>
+                        <date key="maxDate" timeIntervalSinceReferenceDate="-7200">
+                            <!--2000-12-31 22:00:00 +0000-->
+                        </date>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
+                    </datePickerCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="dayStart" id="Zel-Ip-PIX"/>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="ht4-7Q-oMv"/>
+                    </connections>
+                </datePicker>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHK-65-DuA">
+                    <rect key="frame" x="-2" y="25" width="106" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="and finishing at" id="3fm-GF-aWD">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52j-le-XD2">
+                    <rect key="frame" x="110" y="22" width="177" height="22"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="qfS-Ku-cms">
+                        <font key="font" metaFont="smallSystem"/>
+                        <date key="date" timeIntervalSinceReferenceDate="-36000">
+                            <!--2000-12-31 14:00:00 +0000-->
+                        </date>
+                        <date key="minDate" timeIntervalSinceReferenceDate="-93600">
+                            <!--2000-12-30 22:00:00 +0000-->
+                        </date>
+                        <date key="maxDate" timeIntervalSinceReferenceDate="-7200">
+                            <!--2000-12-31 22:00:00 +0000-->
+                        </date>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
+                    </datePickerCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="dayFinish" id="TBL-x0-fAI"/>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="Pqz-t1-66K"/>
+                    </connections>
+                </datePicker>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GzI-zR-Dyn">
+                    <rect key="frame" x="107" y="-3" width="181" height="20"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <string key="toolTip">Excluding intervals provider defined in code - function excludedIntervals(for time) from ExcludedTimeIntervalProvider protocol implemented by ScheduleViewController class - excludes days 1 and 16 of every month, 12:00-24:00 every Friday, and 13:00-14:00 every day (lunch break)</string>
+                    <buttonCell key="cell" type="check" title="Custom provider (in code)" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="OHA-Hh-bWz">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="excludingIntervals" id="RJg-HW-PmW"/>
+                        <binding destination="-2" name="enabled" keyPath="isEnabled" id="WDb-zo-lvY"/>
+                        <binding destination="-2" name="enabled2" keyPath="isExcludedIntervalsEditingEnabled" previousBinding="WDb-zo-lvY" id="MYL-A9-Gcr">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-Qu-n8N">
+                    <rect key="frame" x="-2" y="0.0" width="106" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="Excluding intervals" id="Ojk-61-WIr">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="TLU-dP-H15"/>
+    </objects>
+</document>

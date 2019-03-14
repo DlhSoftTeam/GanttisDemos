@@ -6,20 +6,225 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BF176F16220450150079ABD3 /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF176F15220450150079ABD3 /* ClassicDataSource.swift */; };
+		BF176F19220458940079ABD3 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF176F17220458940079ABD3 /* EditViewController.swift */; };
+		BF176F1A220458940079ABD3 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF176F18220458940079ABD3 /* EditViewController.xib */; };
+		BF19A42E222C4A1A00D3038A /* Ganttis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF19A42D222C4A1A00D3038A /* Ganttis.framework */; };
+		BF19A42F222C4A1A00D3038A /* Ganttis.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF19A42D222C4A1A00D3038A /* Ganttis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF19A431222C4A2700D3038A /* GanttisTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF19A430222C4A2700D3038A /* GanttisTouch.framework */; };
+		BF19A432222C4A2700D3038A /* GanttisTouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF19A430222C4A2700D3038A /* GanttisTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF319FDE21BBFA4900FF9DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF319FDD21BBFA4900FF9DBF /* AppDelegate.swift */; };
+		BF319FE021BBFA4900FF9DBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF319FDF21BBFA4900FF9DBF /* ViewController.swift */; };
+		BF319FE221BBFA4A00FF9DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF319FE121BBFA4A00FF9DBF /* Assets.xcassets */; };
+		BF319FF221BBFA7500FF9DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF319FF121BBFA7500FF9DBF /* AppDelegate.swift */; };
+		BF319FF421BBFA7500FF9DBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF319FF321BBFA7500FF9DBF /* ViewController.swift */; };
+		BF319FF921BBFA7600FF9DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF319FF821BBFA7600FF9DBF /* Assets.xcassets */; };
+		BF4CEFEC21EA114600AB60E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFEB21EA114600AB60E4 /* Main.storyboard */; };
+		BF4CEFEE21EA120800AB60E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFED21EA120800AB60E4 /* Main.storyboard */; };
+		BF4CEFF021EA129500AB60E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */; };
+		BF55D57721D62D2F00051ACE /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */; };
+		BF5A000E21EB89EF00E003CE /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5A000D21EB89EF00E003CE /* Support.swift */; };
+		BF91C59D21DFBD6D00521A99 /* VirtualizedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */; };
+		BFB5E61121F84FFA0026CEB8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */; };
+		BFB5E61221F84FFA0026CEB8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */; };
+		BFEB2D2F21BBFBCF0088279E /* GanttChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB2D2E21BBFBCF0088279E /* GanttChart.swift */; };
+		BFEB2D3121BBFC470088279E /* GanttChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB2D3021BBFC470088279E /* GanttChart.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BFEB2D2921BBFABC0088279E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF19A42F222C4A1A00D3038A /* Ganttis.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFEB2D2D21BBFACD0088279E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF19A432222C4A2700D3038A /* GanttisTouch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BF176F15220450150079ABD3 /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
+		BF176F17220458940079ABD3 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		BF176F18220458940079ABD3 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		BF19A42D222C4A1A00D3038A /* Ganttis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ganttis.framework; sourceTree = "<group>"; };
+		BF19A430222C4A2700D3038A /* GanttisTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GanttisTouch.framework; sourceTree = "<group>"; };
+		BF319FDA21BBFA4900FF9DBF /* GanttisDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GanttisDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF319FDD21BBFA4900FF9DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF319FDF21BBFA4900FF9DBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF319FE121BBFA4A00FF9DBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF319FE621BBFA4A00FF9DBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF319FE721BBFA4A00FF9DBF /* GanttisDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GanttisDemo.entitlements; sourceTree = "<group>"; };
+		BF319FEF21BBFA7500FF9DBF /* GanttisTouchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GanttisTouchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF319FF121BBFA7500FF9DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF319FF321BBFA7500FF9DBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF319FF821BBFA7600FF9DBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF319FFD21BBFA7600FF9DBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF4CEFEB21EA114600AB60E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BF4CEFED21EA120800AB60E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
+		BF5A000D21EB89EF00E003CE /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualizedDataSource.swift; sourceTree = "<group>"; };
+		BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		BFEB2D2E21BBFBCF0088279E /* GanttChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChart.swift; sourceTree = "<group>"; };
+		BFEB2D3021BBFC470088279E /* GanttChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChart.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF319FD721BBFA4900FF9DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF19A42E222C4A1A00D3038A /* Ganttis.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF319FEC21BBFA7500FF9DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF19A431222C4A2700D3038A /* GanttisTouch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		BF319FCF21BBF9FF00FF9DBF = {
 			isa = PBXGroup;
 			children = (
+				BF19A42D222C4A1A00D3038A /* Ganttis.framework */,
+				BF19A430222C4A2700D3038A /* GanttisTouch.framework */,
+				BF319FDC21BBFA4900FF9DBF /* GanttisDemo */,
+				BF319FF021BBFA7500FF9DBF /* GanttisTouchDemo */,
+				BF319FDB21BBFA4900FF9DBF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		BF319FDB21BBFA4900FF9DBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF319FDA21BBFA4900FF9DBF /* GanttisDemo.app */,
+				BF319FEF21BBFA7500FF9DBF /* GanttisTouchDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF319FDC21BBFA4900FF9DBF /* GanttisDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BF319FDD21BBFA4900FF9DBF /* AppDelegate.swift */,
+				BF319FDF21BBFA4900FF9DBF /* ViewController.swift */,
+				BF319FE121BBFA4A00FF9DBF /* Assets.xcassets */,
+				BF4CEFED21EA120800AB60E4 /* Main.storyboard */,
+				BF319FE621BBFA4A00FF9DBF /* Info.plist */,
+				BF319FE721BBFA4A00FF9DBF /* GanttisDemo.entitlements */,
+				BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */,
+				BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */,
+				BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */,
+				BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */,
+				BF5A000D21EB89EF00E003CE /* Support.swift */,
+				BFEB2D2E21BBFBCF0088279E /* GanttChart.swift */,
+			);
+			path = GanttisDemo;
+			sourceTree = "<group>";
+		};
+		BF319FF021BBFA7500FF9DBF /* GanttisTouchDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BF319FF121BBFA7500FF9DBF /* AppDelegate.swift */,
+				BF319FF321BBFA7500FF9DBF /* ViewController.swift */,
+				BF4CEFEB21EA114600AB60E4 /* Main.storyboard */,
+				BF319FF821BBFA7600FF9DBF /* Assets.xcassets */,
+				BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */,
+				BF319FFD21BBFA7600FF9DBF /* Info.plist */,
+				BF176F17220458940079ABD3 /* EditViewController.swift */,
+				BF176F18220458940079ABD3 /* EditViewController.xib */,
+				BF176F15220450150079ABD3 /* ClassicDataSource.swift */,
+				BFEB2D3021BBFC470088279E /* GanttChart.swift */,
+			);
+			path = GanttisTouchDemo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF319FD921BBFA4900FF9DBF /* GanttisDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF319FE821BBFA4A00FF9DBF /* Build configuration list for PBXNativeTarget "GanttisDemo" */;
+			buildPhases = (
+				BF319FD621BBFA4900FF9DBF /* Sources */,
+				BF319FD721BBFA4900FF9DBF /* Frameworks */,
+				BF319FD821BBFA4900FF9DBF /* Resources */,
+				BFEB2D2921BBFABC0088279E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GanttisDemo;
+			productName = GanttisDemo;
+			productReference = BF319FDA21BBFA4900FF9DBF /* GanttisDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF319FEE21BBFA7500FF9DBF /* GanttisTouchDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF31A00021BBFA7600FF9DBF /* Build configuration list for PBXNativeTarget "GanttisTouchDemo" */;
+			buildPhases = (
+				BF319FEB21BBFA7500FF9DBF /* Sources */,
+				BF319FEC21BBFA7500FF9DBF /* Frameworks */,
+				BF319FED21BBFA7500FF9DBF /* Resources */,
+				BFEB2D2D21BBFACD0088279E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GanttisTouchDemo;
+			productName = GanttisTouchDemo;
+			productReference = BF319FEF21BBFA7500FF9DBF /* GanttisTouchDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BF319FD021BBF9FF00FF9DBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
+				TargetAttributes = {
+					BF319FD921BBFA4900FF9DBF = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					BF319FEE21BBFA7500FF9DBF = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
 			};
 			buildConfigurationList = BF319FD321BBF9FF00FF9DBF /* Build configuration list for PBXProject "GanttisDemos" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -27,14 +232,71 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = BF319FCF21BBF9FF00FF9DBF;
+			productRefGroup = BF319FDB21BBFA4900FF9DBF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				BF319FD921BBFA4900FF9DBF /* GanttisDemo */,
+				BF319FEE21BBFA7500FF9DBF /* GanttisTouchDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF319FD821BBFA4900FF9DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB5E61221F84FFA0026CEB8 /* ScheduleViewController.xib in Resources */,
+				BF319FE221BBFA4A00FF9DBF /* Assets.xcassets in Resources */,
+				BF4CEFEE21EA120800AB60E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF319FED21BBFA7500FF9DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF176F1A220458940079ABD3 /* EditViewController.xib in Resources */,
+				BF4CEFF021EA129500AB60E4 /* LaunchScreen.storyboard in Resources */,
+				BF4CEFEC21EA114600AB60E4 /* Main.storyboard in Resources */,
+				BF319FF921BBFA7600FF9DBF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF319FD621BBFA4900FF9DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF91C59D21DFBD6D00521A99 /* VirtualizedDataSource.swift in Sources */,
+				BFEB2D2F21BBFBCF0088279E /* GanttChart.swift in Sources */,
+				BF319FE021BBFA4900FF9DBF /* ViewController.swift in Sources */,
+				BF319FDE21BBFA4900FF9DBF /* AppDelegate.swift in Sources */,
+				BF55D57721D62D2F00051ACE /* ClassicDataSource.swift in Sources */,
+				BFB5E61121F84FFA0026CEB8 /* ScheduleViewController.swift in Sources */,
+				BF5A000E21EB89EF00E003CE /* Support.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF319FEB21BBFA7500FF9DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF176F19220458940079ABD3 /* EditViewController.swift in Sources */,
+				BFEB2D3121BBFC470088279E /* GanttChart.swift in Sources */,
+				BF319FF421BBFA7500FF9DBF /* ViewController.swift in Sources */,
+				BF319FF221BBFA7500FF9DBF /* AppDelegate.swift in Sources */,
+				BF176F16220450150079ABD3 /* ClassicDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		BF319FD421BBF9FF00FF9DBF /* Debug */ = {
@@ -49,6 +311,309 @@
 			};
 			name = Release;
 		};
+		BF319FE921BBFA4A00FF9DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = GanttisDemo/GanttisDemo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = V6L9SVN7M4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = GanttisDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DlhSoft.GanttisDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		BF319FEA21BBFA4A00FF9DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = GanttisDemo/GanttisDemo.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = V6L9SVN7M4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = GanttisDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DlhSoft.GanttisDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		BF319FFE21BBFA7600FF9DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = V6L9SVN7M4;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = GanttisTouchDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DlhSoft.GanttisTouchDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF319FFF21BBFA7600FF9DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = V6L9SVN7M4;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = GanttisTouchDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DlhSoft.GanttisTouchDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -57,6 +622,24 @@
 			buildConfigurations = (
 				BF319FD421BBF9FF00FF9DBF /* Debug */,
 				BF319FD521BBF9FF00FF9DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF319FE821BBFA4A00FF9DBF /* Build configuration list for PBXNativeTarget "GanttisDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF319FE921BBFA4A00FF9DBF /* Debug */,
+				BF319FEA21BBFA4A00FF9DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF31A00021BBFA7600FF9DBF /* Build configuration list for PBXNativeTarget "GanttisTouchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF319FFE21BBFA7600FF9DBF /* Debug */,
+				BF319FFF21BBFA7600FF9DBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
