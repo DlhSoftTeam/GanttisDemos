@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -374,7 +375,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6V-KT-KUZ">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6V-KT-KUZ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="Zp9-RD-sPp">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
@@ -1104,8 +1105,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="x4u-gG-dEX">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="x4u-gG-dEX">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Kvx-WJ-Q0k">
@@ -1127,11 +1128,11 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUy-j9-1BL">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUy-j9-1BL">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="xbQ-qh-Osb">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wth-Cq-7GL" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
@@ -1560,8 +1561,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="y5T-Jj-NKY">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="y5T-Jj-NKY">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="b6L-ZY-RIz">
@@ -1603,11 +1604,11 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-O2-jNZ">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-O2-jNZ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="58f-5U-knB">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRH-bp-AbM" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="651"/>
@@ -1868,8 +1869,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="x6m-c8-9eL">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="x6m-c8-9eL">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="6cC-XG-7Ev">
@@ -1891,11 +1892,11 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKt-9N-HdQ">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKt-9N-HdQ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="fk9-ru-9qY">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3r-ty-idy" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
@@ -1947,8 +1948,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Mis-6l-3zO">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Mis-6l-3zO">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="heq-wA-9jQ">
@@ -1990,11 +1991,11 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="577-Lu-cFc">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="577-Lu-cFc">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="TGT-bV-5yD">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyB-Ym-1oO" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="653"/>
@@ -2429,8 +2430,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="3H0-Fl-eJl">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="3H0-Fl-eJl">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Tkf-W3-jvc">
@@ -2452,11 +2453,11 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAt-uE-HXt">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAt-uE-HXt">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="jMV-Is-FXg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-dZ-uwX" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
@@ -2637,8 +2638,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="vtn-Ae-YRf">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="vtn-Ae-YRf">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="WfG-cP-gZh">
@@ -2680,11 +2681,11 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCu-eD-yBZ">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCu-eD-yBZ">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="prn-oq-H6l">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-iU-wlb" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="1257"/>
@@ -3858,8 +3859,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Sxs-5b-iea">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Sxs-5b-iea">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="NEE-Vb-S34">
@@ -3881,11 +3882,11 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLJ-oV-ScI">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLJ-oV-ScI">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="WHu-PN-ylX">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kz-xM-CdN" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="348"/>
@@ -4150,8 +4151,8 @@
                                                                                         </view>
                                                                                     </subviews>
                                                                                 </clipView>
-                                                                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Pvq-eV-XaH">
-                                                                                    <rect key="frame" x="0.0" y="624" width="320" height="16"/>
+                                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Pvq-eV-XaH">
+                                                                                    <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
                                                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="2sF-oI-d3l">

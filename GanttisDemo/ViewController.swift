@@ -514,15 +514,15 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             if let unit = numericUnit {
                 switch unit {
                 case .weeks:
-                    headerRowNumericFormatOnPeriodsOfType = 0
+                    headerRowNumericFormatOnPeriodsOfUnit = 0
                 case .days:
-                    headerRowNumericFormatOnPeriodsOfType = 1
+                    headerRowNumericFormatOnPeriodsOfUnit = 1
                 case .hours:
-                    headerRowNumericFormatOnPeriodsOfType = 2
+                    headerRowNumericFormatOnPeriodsOfUnit = 2
                 case .minutes:
-                    headerRowNumericFormatOnPeriodsOfType = 3
+                    headerRowNumericFormatOnPeriodsOfUnit = 3
                 case .seconds:
-                    headerRowNumericFormatOnPeriodsOfType = 4
+                    headerRowNumericFormatOnPeriodsOfUnit = 4
                 default: break
                 }
             }
@@ -912,14 +912,14 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         case 38:
             format = .secondWithLeadingZero
         case 39:
-            let schedule: Schedule
+            let schedule: Schedule?
             switch headerRowNumericFormatOnPeriodsOfType {
             case 0:
-                schedule = .continuous
+                schedule = nil
             case 1:
                 schedule = .standard
             default:
-                schedule = .continuous
+                schedule = nil
             }
             let unit: TimeUnit
             switch headerRowNumericFormatOnPeriodsOfUnit {
@@ -1556,15 +1556,28 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     
     @objc dynamic var mode: NSNumber = 0 {
         didSet {
-            switch mode {
-            case 0:
-                ganttChart.appearance = nil
-            case 1:
-                ganttChart.appearance = NSAppearance(named: .aqua)
-            case 2:
-                ganttChart.appearance = NSAppearance(named: .darkAqua)
-            default:
-                ganttChart.appearance = nil
+            if #available(OSX 10.14, *) {
+                switch mode {
+                case 0:
+                    ganttChart.appearance = nil
+                case 1:
+                    ganttChart.appearance = NSAppearance(named: .aqua)
+                case 2:
+                    ganttChart.appearance = NSAppearance(named: .darkAqua)
+                default:
+                    ganttChart.appearance = nil
+                }
+            } else {
+                switch mode {
+                case 0:
+                    controller.mode = nil
+                case 1:
+                    controller.mode = .light
+                case 2:
+                    controller.mode = .dark
+                default:
+                    controller.mode = nil
+                }
             }
         }
     }

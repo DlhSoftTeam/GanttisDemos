@@ -6,15 +6,15 @@
 	<dict>
 		<key>GanttChart.nib</key>
 		<data>
-		seKfYTFi/cxKVeaDvYQT4WQJh5U=
+		5HL5HE14YagD/0JzEYxEJNVVU/0=
 		</data>
 		<key>GanttChartContent.nib</key>
 		<data>
-		vzgFGIhNw0arMk5cA3/1u6OuJik=
+		eKx+ZgXzAP2W3nOiDXMBayNEgEw=
 		</data>
 		<key>GanttChartHeader.nib</key>
 		<data>
-		ebO9DI47j1AYjSDFK0YNt+Jrcno=
+		Ysar8ABFcd9eO2jdjAtqY5fz+II=
 		</data>
 		<key>Headers/GanttisTouch-Swift.h</key>
 		<data>
@@ -26,15 +26,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		x5E9tSfQc20DRDvQ6J/MUmFd0OA=
+		DhFjxOJyVPXuRqY7xicznNqkcHQ=
 		</data>
 		<key>Modules/GanttisTouch.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		/WFHRTG4N3EqB1wIvye9pRfQixU=
+		7FFP0Ki72sKUYkcRSwj64OLKHxc=
 		</data>
 		<key>Modules/GanttisTouch.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		8+tkhsSU1g5wQRL6rhzlO0R9Ipk=
+		vf+rwsS1fczAi+IA8ezPE95DVgs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,21 +47,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WlA5tiN/PKBtOJqCTsZj+hD7170ezl1aUisGiNueg6M=
+			92j/E5gWkUQc8hAUBst0Go504CORTzs960x92vstcB8=
 			</data>
 		</dict>
 		<key>GanttChartContent.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DLfz7/8torlhcFVjj63LLP3VIrPJWbNnjKEhB99Wsbc=
+			4nGB0VTZxUr26SFzxePklFLkSCSi/jsrapJBxe0NTc0=
 			</data>
 		</dict>
 		<key>GanttChartHeader.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GFEReLVSjHdLvMXjhkARe9vCkALX4DWeAD20D6CJL1M=
+			k8IbT7siia/KBPp3QO7Pz1MRhTK7sKoixgyQMJagfAU=
 			</data>
 		</dict>
 		<key>Headers/GanttisTouch-Swift.h</key>
@@ -82,14 +82,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dZNndcysLSFPeaMnOL0ABgImiULF3xBmLdD5UvwGArg=
+			7NuIXtMNlYvCG1FFRtYfInaXDY079FHzGH9ScI9ab14=
 			</data>
 		</dict>
 		<key>Modules/GanttisTouch.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ofaWpbx/DVDFHyeey61oiFQjtA1D6T+FD1T7i36LSDU=
+			SwljKaczqUCPRDyTHkMWjIFfNxpYQcTeIp9Y9wa0im4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
