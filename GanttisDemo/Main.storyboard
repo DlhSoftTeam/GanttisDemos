@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -281,7 +281,7 @@
                                             <font key="font" metaFont="system"/>
                                             <segments>
                                                 <segment toolTip="Standard" image="ThemeStandard" width="32" selected="YES"/>
-                                                <segment toolTip="Intense" image="ThemeIntense" width="32" tag="1"/>
+                                                <segment toolTip="Aqua" image="ThemeAqua" width="32" tag="1"/>
                                                 <segment toolTip="Jewel" image="ThemeJewel" width="32"/>
                                                 <segment toolTip="Custom" image="ThemeCustom" width="32"/>
                                             </segments>
@@ -1132,7 +1132,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="xbQ-qh-Osb">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wth-Cq-7GL" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
@@ -1608,7 +1608,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="58f-5U-knB">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRH-bp-AbM" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="651"/>
@@ -1896,7 +1896,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="fk9-ru-9qY">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3r-ty-idy" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
@@ -1995,7 +1995,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="TGT-bV-5yD">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyB-Ym-1oO" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="653"/>
@@ -2457,7 +2457,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="jMV-Is-FXg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-dZ-uwX" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
@@ -2685,7 +2685,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="prn-oq-H6l">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-iU-wlb" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="1257"/>
@@ -3886,7 +3886,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="WHu-PN-ylX">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kz-xM-CdN" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="348"/>
@@ -4265,8 +4265,8 @@
         <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="NSShareTemplate" width="11" height="16"/>
+        <image name="ThemeAqua" width="16" height="16"/>
         <image name="ThemeCustom" width="16" height="16"/>
-        <image name="ThemeIntense" width="16" height="16"/>
         <image name="ThemeJewel" width="16" height="16"/>
         <image name="ThemeStandard" width="16" height="16"/>
     </resources>

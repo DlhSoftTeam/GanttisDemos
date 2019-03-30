@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF01088D224E52C9007A3E20 /* Ganttis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF01088C224E52C9007A3E20 /* Ganttis.framework */; };
-		BF01088E224E52C9007A3E20 /* Ganttis.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF01088C224E52C9007A3E20 /* Ganttis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF010890224E52D3007A3E20 /* GanttisTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF01088F224E52D3007A3E20 /* GanttisTouch.framework */; };
-		BF010891224E52D3007A3E20 /* GanttisTouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF01088F224E52D3007A3E20 /* GanttisTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF176F16220450150079ABD3 /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF176F15220450150079ABD3 /* ClassicDataSource.swift */; };
 		BF176F19220458940079ABD3 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF176F17220458940079ABD3 /* EditViewController.swift */; };
 		BF176F1A220458940079ABD3 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF176F18220458940079ABD3 /* EditViewController.xib */; };
@@ -28,6 +24,10 @@
 		BF91C59D21DFBD6D00521A99 /* VirtualizedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */; };
 		BFB5E61121F84FFA0026CEB8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */; };
 		BFB5E61221F84FFA0026CEB8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */; };
+		BFE80F1522500D0D00365363 /* Ganttis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE80F1422500D0D00365363 /* Ganttis.framework */; };
+		BFE80F1622500D0D00365363 /* Ganttis.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFE80F1422500D0D00365363 /* Ganttis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFE80F1822500D1A00365363 /* GanttisTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE80F1722500D1A00365363 /* GanttisTouch.framework */; };
+		BFE80F1922500D1A00365363 /* GanttisTouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFE80F1722500D1A00365363 /* GanttisTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFEB2D2F21BBFBCF0088279E /* GanttChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB2D2E21BBFBCF0088279E /* GanttChart.swift */; };
 		BFEB2D3121BBFC470088279E /* GanttChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB2D3021BBFC470088279E /* GanttChart.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF01088E224E52C9007A3E20 /* Ganttis.framework in Embed Frameworks */,
+				BFE80F1622500D0D00365363 /* Ganttis.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF010891224E52D3007A3E20 /* GanttisTouch.framework in Embed Frameworks */,
+				BFE80F1922500D1A00365363 /* GanttisTouch.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,8 +58,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BF01088C224E52C9007A3E20 /* Ganttis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ganttis.framework; sourceTree = "<group>"; };
-		BF01088F224E52D3007A3E20 /* GanttisTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GanttisTouch.framework; sourceTree = "<group>"; };
 		BF176F15220450150079ABD3 /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
 		BF176F17220458940079ABD3 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		BF176F18220458940079ABD3 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
@@ -82,6 +80,8 @@
 		BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualizedDataSource.swift; sourceTree = "<group>"; };
 		BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
+		BFE80F1422500D0D00365363 /* Ganttis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ganttis.framework; sourceTree = "<group>"; };
+		BFE80F1722500D1A00365363 /* GanttisTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GanttisTouch.framework; sourceTree = "<group>"; };
 		BFEB2D2E21BBFBCF0088279E /* GanttChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChart.swift; sourceTree = "<group>"; };
 		BFEB2D3021BBFC470088279E /* GanttChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF01088D224E52C9007A3E20 /* Ganttis.framework in Frameworks */,
+				BFE80F1522500D0D00365363 /* Ganttis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF010890224E52D3007A3E20 /* GanttisTouch.framework in Frameworks */,
+				BFE80F1822500D1A00365363 /* GanttisTouch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,8 +109,8 @@
 		BF319FCF21BBF9FF00FF9DBF = {
 			isa = PBXGroup;
 			children = (
-				BF01088C224E52C9007A3E20 /* Ganttis.framework */,
-				BF01088F224E52D3007A3E20 /* GanttisTouch.framework */,
+				BFE80F1422500D0D00365363 /* Ganttis.framework */,
+				BFE80F1722500D1A00365363 /* GanttisTouch.framework */,
 				BF319FDC21BBFA4900FF9DBF /* GanttisDemo */,
 				BF319FF021BBFA7500FF9DBF /* GanttisTouchDemo */,
 				BF319FDB21BBFA4900FF9DBF /* Products */,

@@ -116,8 +116,8 @@ class ViewController: UIViewController, GanttChartItemObserver, GanttChartConten
         switch button.title {
         case "Standard":
             controller.theme = .standard
-        case "Intense":
-            controller.theme = .intense
+        case "Aqua":
+            controller.theme = .aqua
         case "Jewel":
             controller.theme = .jewel
         case "Dark":

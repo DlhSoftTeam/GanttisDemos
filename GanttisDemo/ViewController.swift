@@ -264,7 +264,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         case 0:
             controller.theme = .standard
         case 1:
-            controller.theme = .intense
+            controller.theme = .aqua
         case 2:
             controller.theme = .jewel
         case 3:
