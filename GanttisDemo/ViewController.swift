@@ -101,9 +101,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         itemSource = nil
     }
     func initializeGanttChart() {
-        contentController.settings.showsCompletionBarsForSummaryItems = false
         contentController.settings.allowsSelectingElements = true
         contentController.settings.selectsNewlyCreatedElements = true
+        contentController.settings.numberOfClicksRequiredToActivateElements = 2
+        contentController.settings.activationTogglesExpansionForSummaryItems = true
+        contentController.settings.showsCompletionBarsForSummaryItems = false
         contentController.settings.temporaryBarWidth = contentController.hourWidth * 24
         contentController.zoom = zoom
         headerController.settings.minZoom = 0.4
@@ -312,7 +314,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     func initializeEditableValues() {
         initializeTimeline()
         rowCount = contentController.actualRowCount as NSNumber
-        defaultHourWidth = contentController.hourWidth
+        defaultHourWidth = headerController.hourWidth
         hourWidth = defaultHourWidth as NSNumber
         defaultRowHeight = contentController.rowHeight
         rowHeight = defaultRowHeight as NSNumber
@@ -381,8 +383,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     @objc dynamic var hourWidth: NSNumber? {
         didSet {
             guard hourWidth != oldValue else { return }
-            guard let contentController = contentController else { return }
-            contentController.hourWidth = hourWidth as? Double ?? defaultHourWidth
+            guard let headerController = headerController else { return }
+            headerController.hourWidth = hourWidth as? Double ?? defaultHourWidth
         }
     }
     var defaultHourWidth: Double!
