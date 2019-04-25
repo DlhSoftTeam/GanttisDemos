@@ -1608,7 +1608,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="58f-5U-knB">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRH-bp-AbM" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="651"/>
@@ -1783,7 +1783,7 @@
                                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHD-V7-W79">
                                                                                                             <rect key="frame" x="18" y="207" width="284" height="14"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                                                            <textFieldCell key="cell" controlSize="small" title="Item updates" id="F0W-ZP-l9a">
+                                                                                                            <textFieldCell key="cell" controlSize="small" title="Working time (applying on items)" id="F0W-ZP-l9a">
                                                                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1896,7 +1896,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="fk9-ru-9qY">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3r-ty-idy" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
@@ -1909,7 +1909,7 @@
                                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcz-TF-HR8">
                                                                                                             <rect key="frame" x="18" y="167" width="284" height="14"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                                                            <textFieldCell key="cell" controlSize="small" title="Updates" id="Fgt-cz-ndf">
+                                                                                                            <textFieldCell key="cell" controlSize="small" title="Working time" id="Fgt-cz-ndf">
                                                                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

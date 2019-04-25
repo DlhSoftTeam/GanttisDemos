@@ -40,8 +40,9 @@ class ViewController: UIViewController, GanttChartItemObserver, GanttChartConten
         contentController.intervalHighlighters = classicIntervalHighlighters
         headerController = GanttChartHeaderController()
         headerController.rows = classicHeaderRows
+        initializeAutoShiftingScrollableTimeline()
         initializeGanttChart()
-        contentController.scroll(to: classicProjectStart)
+        contentController.scrollVisibleTimeline(toStartOn: classicProjectStart)
         initializeObservers()
     }
     
@@ -51,6 +52,10 @@ class ViewController: UIViewController, GanttChartItemObserver, GanttChartConten
         headerController = nil
         itemManager = nil
         itemSource = nil
+    }
+    func initializeAutoShiftingScrollableTimeline() {
+        contentController.settings.autoShiftsScrollableTimelineBy =
+            TimeInterval(from: 1, in: .weeks)
     }
     func initializeGanttChart() {
         contentController.settings.showsCompletionBarsForSummaryItems = false
@@ -77,6 +82,7 @@ class ViewController: UIViewController, GanttChartItemObserver, GanttChartConten
     }
     
     @IBAction func addItem(_ button: UIBarButtonItem) {
+        guard contentController.settings.allowsCreatingBars else { return }
         isAddingItemInternally = true
         let row = itemManager.totalRowCount
         let time = contentController.visibleTimeline.start
@@ -101,8 +107,12 @@ class ViewController: UIViewController, GanttChartItemObserver, GanttChartConten
     
     @IBAction func removeItem(_ button: UIBarButtonItem) {
         if let item = contentController.selectedItem {
+            guard contentController.settings.allowsDeletingBar(for: item)
+                else { return }
             itemManager.removeItem(item)
         } else if let dependency = contentController.selectedDependency {
+            guard contentController.settings.allowsDeletingDependencyLine(for: dependency)
+                else { return }
             itemManager.removeDependency(dependency)
         }
         contentController.selectedItem = nil

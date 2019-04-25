@@ -62,8 +62,9 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         contentController.intervalHighlighters = classicIntervalHighlighters
         headerController = GanttChartHeaderController()
         headerController.rows = classicHeaderRows
+        initializeAutoShiftingScrollableTimeline()
         initializeGanttChart()
-        contentController.scroll(to: classicProjectStart)
+        contentController.scrollVisibleTimeline(toStartOn: classicProjectStart)
         initializeObservers()
         prepareCustomTheme()
         initializeTheme()
@@ -99,6 +100,10 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         headerController = nil
         itemManager = nil
         itemSource = nil
+    }
+    func initializeAutoShiftingScrollableTimeline() {
+        contentController.settings.autoShiftsScrollableTimelineBy =
+            TimeInterval(from: 1, in: .weeks)
     }
     func initializeGanttChart() {
         contentController.settings.allowsSelectingElements = true
@@ -173,6 +178,9 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             }
         }
         contentController.settings.temporaryBarWidth = contentController.actualHourWidth * 24
+        if useCustomHeaders == 1 {
+            headerRowHeight = NSNumber(value: headerController.rowHeight)
+        }
     }
     
     @IBAction func resetDataSource(_ button: NSButton) {
@@ -187,6 +195,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     }
     
     @IBAction func addItem(_ button: NSButton) {
+        guard contentController.settings.allowsCreatingBars else { return }
         isAddingItemInternally = true
         let row = itemManager.totalRowCount
         let time = contentController.visibleTimeline.start
@@ -213,8 +222,12 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     
     @IBAction func removeItem(_ button: NSButton) {
         if let item = contentController.selectedItem {
+            guard contentController.settings.allowsDeletingBar(for: item)
+                else { return }
             itemManager.removeItem(item)
         } else if let dependency = contentController.selectedDependency {
+            guard contentController.settings.allowsDeletingDependencyLine(for: dependency)
+                else { return }
             itemManager.removeDependency(dependency)
         }
         contentController.selectedItem = nil
@@ -399,6 +412,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     
     func initializeHeaderRows() {
         isInitializingHeaderRowsInternally = true
+        selectedHeaderRowIndex = nil
         headerRowCount = headerController.rowCount as NSNumber
         useCustomHeaders = 0
         selectedHeaderRowIndex = 0
@@ -496,7 +510,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
                 headerRowNumericFormatStartingAtZero =
                     labelGenerator.zeroBased == true ? 1 : 0
                 headerRowNumericFormatShowingNegativeValues =
-                    labelGenerator.includeNegativeValues == true ? 1 : 0
+                    labelGenerator.includingNegativeValues == true ? 1 : 0
             } else if let labelGenerator = labelGenerator
                 as? FormattedTimeLabelGenerator {
                 headerRowDisplayingIntervals = 0
@@ -511,7 +525,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
                 headerRowNumericFormatStartingAtZero =
                     labelGenerator.zeroBased == true ? 1 : 0
                 headerRowNumericFormatShowingNegativeValues =
-                    labelGenerator.includeNegativeValues == true ? 1 : 0
+                    labelGenerator.includingNegativeValues == true ? 1 : 0
             }
             if let unit = numericUnit {
                 switch unit {
@@ -942,7 +956,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
                 ? Time.current.weekStart : Time.reference
             format = .numeric(since: since, in: unit, schedule: schedule,
                               zeroBased: headerRowNumericFormatStartingAtZero == 1,
-                              includeNegativeValues: headerRowNumericFormatShowingNegativeValues == 1)
+                              includingNegativeValues: headerRowNumericFormatShowingNegativeValues == 1)
         default:
             format = nil
         }
@@ -1088,7 +1102,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         default:
             type = .weeks(period: period, startingOn: weekStartingOn)
         }
-        contentController.intervalHighlighters = [TimeSelector(type)]
+        contentController.intervalHighlighters =
+            [TimeSelector(type), contentController.intervalHighlighters[1]]
     }
     
     func initializeItemUpdateGranularity() {
