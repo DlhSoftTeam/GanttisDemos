@@ -705,7 +705,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-ql-vXM">
+                                                                                                        <popUpButton toolTip="Available when separators are configured on weeks" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-ql-vXM">
                                                                                                             <rect key="frame" x="126" y="270" width="177" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <popUpButtonCell key="cell" type="push" title="Sunday" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="LoE-wA-Thw" id="JtN-Vn-R4x">
@@ -749,7 +749,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXV-1b-fwx">
+                                                                                                        <textField toolTip="Indicates the number of intervals to repeat between each pair of separators" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXV-1b-fwx">
                                                                                                             <rect key="frame" x="130" y="246" width="157" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Wc8-Wf-8IY">
@@ -793,6 +793,7 @@
                                                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGB-3Z-OM5">
                                                                                                             <rect key="frame" x="127" y="221" width="175" height="20"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                                            <string key="toolTip">When applied, ensures header titles are always visible on screen, even when intervals start or finish outside of the visible viewport</string>
                                                                                                             <buttonCell key="cell" type="check" title="bound to visible timeline" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="Jgq-do-Kb3">
                                                                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                                                 <font key="font" metaFont="smallSystem"/>
@@ -884,7 +885,7 @@
                                                                                                                 <binding destination="XfG-lQ-9wD" name="enabled" keyPath="isHeaderRowCountEditingEnabled" id="fWv-w4-WKN"/>
                                                                                                             </connections>
                                                                                                         </popUpButton>
-                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-0G-Gfl">
+                                                                                                        <textField toolTip="To fully customize header titles, select custom format from the pop-up above" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-0G-Gfl">
                                                                                                             <rect key="frame" x="130" y="169" width="170" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="9H8-UO-KKQ">
@@ -918,6 +919,7 @@
                                                                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCI-ZT-2ca">
                                                                                                             <rect key="frame" x="127" y="138" width="176" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                                            <string key="toolTip">When numeric format is selected from the pop-up above, indicates whether counters are increased with each interval or only for the working time ones</string>
                                                                                                             <popUpButtonCell key="cell" type="push" title="continuous" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="cF6-h3-RL7" id="jra-O9-zRs">
                                                                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                                                                                 <font key="font" metaFont="smallSystem"/>
@@ -1132,7 +1134,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="xbQ-qh-Osb">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wth-Cq-7GL" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
@@ -1160,7 +1162,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8d-JI-bpW">
+                                                                                                        <textField identifier="Displayed on the item's bar" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8d-JI-bpW">
                                                                                                             <rect key="frame" x="130" y="439" width="170" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="MSl-03-v1e">
@@ -1181,7 +1183,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <datePicker toolTip="Selects scrollable timeline start" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-D1-xVm">
+                                                                                                        <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhe-D1-xVm">
                                                                                                             <rect key="frame" x="130" y="411" width="172" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="snk-FE-NnU">
@@ -1206,7 +1208,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <datePicker toolTip="Selects scrollable timeline start" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wky-Mv-kQP">
+                                                                                                        <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wky-Mv-kQP">
                                                                                                             <rect key="frame" x="130" y="383" width="172" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="Web-dK-a0p">
@@ -1244,7 +1246,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField toolTip="Selects desired row count" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKe-aj-eYY">
+                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IKe-aj-eYY">
                                                                                                             <rect key="frame" x="130" y="329" width="157" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="5oe-2D-DWb">
@@ -1282,7 +1284,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aei-Lu-UTO">
+                                                                                                        <textField toolTip="Displayed in the right side of the item's bar" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aei-Lu-UTO">
                                                                                                             <rect key="frame" x="130" y="293" width="170" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="9tg-7C-QV5">
@@ -1303,7 +1305,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYb-CQ-9Aw">
+                                                                                                        <textField toolTip="Displayed when hovering the item's bar" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYb-CQ-9Aw">
                                                                                                             <rect key="frame" x="130" y="209" width="170" height="76"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="VuC-FL-cxn">
@@ -1328,7 +1330,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wx-ns-ciO">
+                                                                                                        <popUpButton toolTip="Indicates the shape (rectangle, diamond, or container polygon) and the associated behavior of the item" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wx-ns-ciO">
                                                                                                             <rect key="frame" x="126" y="171" width="177" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <popUpButtonCell key="cell" type="push" title="Standard" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9Nl-ac-CzL" id="28B-Dg-16X">
@@ -1355,7 +1357,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField toolTip="Selects desired row count" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sjs-1a-xJy">
+                                                                                                        <textField toolTip="Selects desired row index" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sjs-1a-xJy">
                                                                                                             <rect key="frame" x="130" y="149" width="157" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Vwl-En-tXi">
@@ -1413,7 +1415,7 @@
                                                                                                                 <binding destination="XfG-lQ-9wD" name="value" keyPath="isItemMinStartEnabled" id="mpM-TE-vbs"/>
                                                                                                             </connections>
                                                                                                         </button>
-                                                                                                        <datePicker toolTip="Selects scrollable timeline start" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BS5-t3-bBy">
+                                                                                                        <datePicker toolTip="When used, the item's start cannot be before this date" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BS5-t3-bBy">
                                                                                                             <rect key="frame" x="152" y="92" width="150" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="5qQ-Cx-3oe">
@@ -1451,7 +1453,7 @@
                                                                                                                 <binding destination="XfG-lQ-9wD" name="value" keyPath="isItemMaxStartEnabled" id="j2E-F2-g4m"/>
                                                                                                             </connections>
                                                                                                         </button>
-                                                                                                        <datePicker toolTip="Selects scrollable timeline start" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acj-lR-aqq">
+                                                                                                        <datePicker toolTip="When used, the item's start cannot be after this date" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="acj-lR-aqq">
                                                                                                             <rect key="frame" x="152" y="67" width="150" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="2MV-UR-Wzx">
@@ -1490,7 +1492,7 @@
                                                                                                                 <binding destination="XfG-lQ-9wD" name="value" keyPath="isItemMinFinishEnabled" id="h6i-yV-Jhl"/>
                                                                                                             </connections>
                                                                                                         </button>
-                                                                                                        <datePicker toolTip="Selects scrollable timeline start" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQi-7f-mnO">
+                                                                                                        <datePicker toolTip="When used, the item's finish cannot be before this date" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQi-7f-mnO">
                                                                                                             <rect key="frame" x="152" y="39" width="150" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="zso-MA-d7U">
@@ -1529,7 +1531,7 @@
                                                                                                                 <binding destination="XfG-lQ-9wD" name="value" keyPath="isItemMaxFinishEnabled" id="iGE-oq-O2n"/>
                                                                                                             </connections>
                                                                                                         </button>
-                                                                                                        <datePicker toolTip="Selects scrollable timeline start" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y45-VS-o9u">
+                                                                                                        <datePicker toolTip="When used, the item's finish cannot be after this date" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y45-VS-o9u">
                                                                                                             <rect key="frame" x="152" y="14" width="150" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="aUH-sG-tBs">
@@ -1621,6 +1623,7 @@
                                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASE-fA-NX9">
                                                                                                             <rect key="frame" x="18" y="617" width="284" height="14"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                                            <string key="toolTip">Note that if you want to display all week days, but the weeks to be presented as starting on Monday or on Saturday, you can apply that behavior by configuring header separators (in Diagram section) and chart separators (after Highlighting below)</string>
                                                                                                             <textFieldCell key="cell" controlSize="small" title="Visible time" id="wH7-Wu-c5v">
                                                                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1725,7 +1728,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qdY-Zv-czG">
+                                                                                                        <popUpButton toolTip="Available when separators are configured on weeks" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qdY-Zv-czG">
                                                                                                             <rect key="frame" x="126" y="262" width="177" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <popUpButtonCell key="cell" type="push" title="Sunday" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="WU3-Yl-0NC" id="JST-Dv-Yp0">
@@ -1753,7 +1756,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HEa-v3-NN0">
+                                                                                                        <textField toolTip="Indicates the number of intervals to repeat between each pair of separators" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HEa-v3-NN0">
                                                                                                             <rect key="frame" x="130" y="238" width="157" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="h1e-y4-QnC">
@@ -1809,7 +1812,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3E-Sj-A9J">
+                                                                                                        <popUpButton toolTip="Indicates how dates and times are &quot;rounded&quot; when item bars are updated" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3E-Sj-A9J">
                                                                                                             <rect key="frame" x="126" y="41" width="177" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <popUpButtonCell key="cell" type="push" title="continuous" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QbH-t9-vjx" id="PNM-CW-bHS">
@@ -1838,7 +1841,7 @@
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                                             </textFieldCell>
                                                                                                         </textField>
-                                                                                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDc-tB-mF9">
+                                                                                                        <textField toolTip="Indicates the number of intervals to repeat between each pair of granularity points" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDc-tB-mF9">
                                                                                                             <rect key="frame" x="130" y="17" width="157" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0rS-u2-d4K">
@@ -1896,7 +1899,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="fk9-ru-9qY">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D3r-ty-idy" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="201"/>
@@ -1995,7 +1998,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="TGT-bV-5yD">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyB-Ym-1oO" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="653"/>
@@ -2457,7 +2460,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="jMV-Is-FXg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-dZ-uwX" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="298"/>
@@ -2685,7 +2688,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
                                                                                 <clipView key="contentView" id="prn-oq-H6l">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
-                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <subviews>
                                                                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDM-iU-wlb" customClass="ContentView" customModule="GanttisDemo" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="1257"/>
@@ -3408,17 +3411,8 @@
                                                                                                                 <binding destination="XfG-lQ-9wD" name="enabled" keyPath="isFocusBorderEnabled" id="2sI-WI-7zw"/>
                                                                                                             </connections>
                                                                                                         </colorWell>
-                                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uet-KF-CHU">
-                                                                                                            <rect key="frame" x="18" y="452" width="106" height="14"/>
-                                                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                                                            <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="width" id="VSJ-nR-UQh">
-                                                                                                                <font key="font" metaFont="smallSystem"/>
-                                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                                                            </textFieldCell>
-                                                                                                        </textField>
                                                                                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SnK-Wq-mgJ">
-                                                                                                            <rect key="frame" x="150" y="449" width="137" height="19"/>
+                                                                                                            <rect key="frame" x="150" y="446" width="137" height="19"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VNq-uy-Y3Z">
                                                                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Dzh-zd-MgB">
@@ -3434,7 +3428,7 @@
                                                                                                             </connections>
                                                                                                         </textField>
                                                                                                         <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-2P-AMK">
-                                                                                                            <rect key="frame" x="287" y="447" width="15" height="22"/>
+                                                                                                            <rect key="frame" x="287" y="444" width="15" height="22"/>
                                                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                                                                             <stepperCell key="cell" controlSize="small" continuous="YES" alignment="left" increment="0.25" maxValue="20" doubleValue="1" id="hWB-rg-Md1"/>
                                                                                                             <connections>
@@ -3853,6 +3847,15 @@
                                                                                                                 <binding destination="XfG-lQ-9wD" name="value" keyPath="headerLabelForeground" id="rEj-23-FVv"/>
                                                                                                             </connections>
                                                                                                         </colorWell>
+                                                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uet-KF-CHU">
+                                                                                                            <rect key="frame" x="18" y="449" width="106" height="14"/>
+                                                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                                            <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" alignment="right" title="width" id="VSJ-nR-UQh">
+                                                                                                                <font key="font" metaFont="smallSystem"/>
+                                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                                            </textFieldCell>
+                                                                                                        </textField>
                                                                                                     </subviews>
                                                                                                 </customView>
                                                                                             </subviews>
@@ -3863,7 +3866,7 @@
                                                                                     <rect key="frame" x="-100" y="-100" width="320" height="16"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
-                                                                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="NEE-Vb-S34">
+                                                                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.61750405186385737" horizontal="NO" id="NEE-Vb-S34">
                                                                                     <rect key="frame" x="304" y="0.0" width="16" height="640"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </scroller>
