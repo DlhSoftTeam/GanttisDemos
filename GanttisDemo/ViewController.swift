@@ -423,10 +423,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         didSet {
             guard headerRowCount != oldValue else { return }
             let count = headerRowCount as? Int ?? 2
-            selectableHeaderRowIndexesMenu.items = (0..<count).map { index in
+            selectableHeaderRowIndexesMenu.removeAllItems()
+            for index in 0..<count {
                 let menuItem = NSMenuItem()
                 menuItem.title = "Header \(index + 1)"
-                return menuItem
+                selectableHeaderRowIndexesMenu.addItem(menuItem)
             }
             selectedHeaderRowIndex = nil
             updateHeaderRows()
