@@ -131,7 +131,12 @@ class ViewController: UIViewController, GanttChartItemObserver, GanttChartConten
         case "Jewel":
             controller.theme = .jewel
         case "Dark":
-            controller.mode = controller.mode != .dark ? .dark : .light
+            if #available(iOS 13.0, macCatalyst 13.0, *) {
+                ganttChart.overrideUserInterfaceStyle =
+                    ganttChart.overrideUserInterfaceStyle != .dark ? .dark : .light
+            } else {
+                controller.mode = controller.mode != .dark ? .dark : .light
+            }
         default: break
         }
     }

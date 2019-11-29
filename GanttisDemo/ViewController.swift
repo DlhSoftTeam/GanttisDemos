@@ -8,7 +8,8 @@
 import Cocoa
 import Ganttis
 
-class ViewController: NSViewController, GanttChartItemObserver, GanttChartContentSelectionObserver, GanttChartContentViewportObserver, GanttChartContentStyleObserver, GanttChartHeaderRowSelector, GanttChartHeaderStyleObserver, ScheduleViewObserver {
+class ViewController: NSViewController, GanttChartItemObserver, GanttChartContentSelectionObserver, GanttChartContentViewportObserver, GanttChartRangeObserver, GanttChartTimelineObserver, GanttChartContentStyleObserver, GanttChartHeaderRowSelector, GanttChartHeaderStyleObserver, ScheduleViewObserver, NSOutlineViewDelegate {
+    @IBOutlet weak var outlineGanttChart: OutlineGanttChart!
     @IBOutlet weak var ganttChart: GanttChart!
     @IBOutlet weak var editTabView: NSTabView!
     @IBOutlet weak var timelineStartDatePicker: NSDatePicker!
@@ -20,6 +21,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     @IBOutlet weak var itemMinFinishDatePicker: NSDatePicker!
     @IBOutlet weak var itemMaxFinishDatePicker: NSDatePicker!
     @IBOutlet weak var selectableHeaderRowIndexesMenu: NSMenu!
+    
+    lazy var outlineView: NSOutlineView = outlineGanttChart.outlineView
     
     var itemSource: GanttChartItemSource!
     var itemManager: GanttChartItemManager!
@@ -33,7 +36,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         // Do any additional setup after loading the view.
         
         initializeDatePickers()
-        initializeClassicDataSource()
+        initializeOutlineView()
+        initializeOutlineDataSource()
     }
     
     func initializeDatePickers() {
@@ -48,6 +52,40 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             datePicker.timeZone = timeZone
         }
     }
+    func initializeOutlineView() {
+        outlineView.delegate = self
+    }
+    
+    func initializeOutlineDataSource() {
+        initializeControllers()
+        outlineGanttChart.dataSource = outlineDataSource
+        outlineView.expandItem(nil, expandChildren: true)
+        controller = outlineGanttChart.ganttChart.controller
+        headerController = controller.headerController
+        contentController = controller.contentController
+        itemManager = contentController.itemManager
+        contentController.scrollableTimeline = classicScrollableTimeline
+        contentController.visibilitySchedule = classicVisibilitySchedule
+        contentController.hourWidth = classicHourWidth
+        contentController.scheduleHighlighters = classicScheduleHighlighters
+        contentController.intervalHighlighters = classicIntervalHighlighters
+        contentController.timeScale = classicTimeScale
+        headerController.rows = classicHeaderRows
+        initializeAutoShiftingScrollableTimeline()
+        initializeGanttChart()
+        contentController.scrollVisibleTimeline(toStartOn: classicProjectStart)
+        initializeObservers()
+        prepareCustomTheme()
+        initializeTheme()
+        isTimelineEditingEnabled = true
+        isRowCountEditingEnabled = false
+        isItemRowEditingEnabled = false
+        isVisibilityScheduleExcludedIntervalsEditingEnabled = true
+        initializeEditableValues()
+        minHeaderRowCount = 1
+        minHeaderRowHeight = defaultHeaderRowHeight as NSNumber
+    }
+    lazy var outlineDataSource = OutlineDataSource(for: outlineGanttChart)
     
     func initializeClassicDataSource() {
         initializeControllers()
@@ -60,8 +98,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         contentController.hourWidth = classicHourWidth
         contentController.scheduleHighlighters = classicScheduleHighlighters
         contentController.intervalHighlighters = classicIntervalHighlighters
+        contentController.timeScale = classicTimeScale
         headerController = GanttChartHeaderController()
-        headerController.rows = classicHeaderRows
         initializeAutoShiftingScrollableTimeline()
         initializeGanttChart()
         contentController.scrollVisibleTimeline(toStartOn: classicProjectStart)
@@ -70,8 +108,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         initializeTheme()
         isTimelineEditingEnabled = true
         isRowCountEditingEnabled = true
+        isItemRowEditingEnabled = true
         isVisibilityScheduleExcludedIntervalsEditingEnabled = true
         initializeEditableValues()
+        minHeaderRowCount = nil
+        minHeaderRowHeight = nil
     }
     func initializeVirtualizedDataSource() {
         initializeControllers()
@@ -82,6 +123,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         contentController.preferredTimelineMargin = 0
         contentController.scheduleHighlighters = virtualizedScheduleHighlighters
         contentController.intervalHighlighters = virtualizedIntervalHighlighters
+        contentController.timeScale = virtualizedTimeScale
         headerController = GanttChartHeaderController()
         headerController.rows = virtualizedHeaderRows
         initializeGanttChart()
@@ -91,8 +133,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         initializeTheme()
         isTimelineEditingEnabled = false
         isRowCountEditingEnabled = false
+        isItemRowEditingEnabled = true
         isVisibilityScheduleExcludedIntervalsEditingEnabled = false
         initializeEditableValues()
+        minHeaderRowCount = nil
+        minHeaderRowHeight = nil
     }
     func initializeControllers() {
         controller = nil
@@ -109,34 +154,56 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         contentController.settings.allowsSelectingElements = true
         contentController.settings.selectsNewlyCreatedElements = true
         contentController.settings.numberOfClicksRequiredToActivateElements = 2
-        contentController.settings.activationTogglesExpansionForSummaryItems = true
+        contentController.settings.activationTogglesExpansionForSummaryItems =
+            outlineGanttChart.isHidden
         contentController.settings.showsCompletionBarsForSummaryItems = false
         contentController.settings.temporaryBarWidth = contentController.hourWidth * 24
         contentController.zoom = zoom
         headerController.settings.minZoom = 0.4
         headerController.settings.maxZoom = 8
-        controller = GanttChartController(headerController: headerController,
-                                          contentController: contentController)
-        ganttChart.controller = controller
-        contentController.scrollVertically(to: Row(0))
+        if !outlineGanttChart.isHidden {
+            outlineGanttChart.scrollRowToVisible(0)
+            outlineGanttChart.scrollColumnToVisible(0)
+        } else {
+            controller = GanttChartController(headerController: headerController,
+                                              contentController: contentController)
+            ganttChart.controller = controller
+            contentController.scrollVertically(to: Row(0))
+        }
     }
     func initializeObservers() {
-        itemManager?.itemObserver = self
+        if outlineGanttChart.isHidden {
+            itemManager.itemObserver = self
+        } else {
+            outlineGanttChart.ganttChartItemObserver = self
+        }
         contentController.selectionObserver = self
         contentController.viewportObserver = self
+        controller.rangeObserver = self
+        controller.timelineObserver = self
         contentController.styleObserver = self
         headerController.styleObserver = self
     }
     
     @IBAction func dataSourceSelectionDidChange(_ segmentedControl: NSSegmentedControl) {
+        outlineView.selectRowIndexes([], byExtendingSelection: false)
         contentController.selectedItem = nil
         switch segmentedControl.label(forSegment: segmentedControl.selectedSegment) {
-        case "Classic":
+        case "Outline":
+            setGanttChartVisibility(outline: true)
+            initializeOutlineDataSource()
+        case "Chart":
+            setGanttChartVisibility(outline: false)
             initializeClassicDataSource()
         case "Virtualized":
+            setGanttChartVisibility(outline: false)
             initializeVirtualizedDataSource()
         default: break
         }
+    }
+    func setGanttChartVisibility(outline: Bool) {
+        outlineGanttChart.isHidden = !outline
+        ganttChart.isHidden = outline
     }
     
     @IBAction func zoomSelectionDidChange(_ popUpButton: NSPopUpButton) {
@@ -181,11 +248,18 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         if useCustomHeaders == 1 {
             headerRowHeight = NSNumber(value: headerController.rowHeight)
         }
+        isUseCustomHeadersEnabled = outlineGanttChart.isHidden &&
+            zoom == 1 && hourWidth == defaultHourWidth as NSNumber
     }
     
     @IBAction func resetDataSource(_ button: NSButton) {
         contentController.selectedItem = nil
-        if itemSource === classicDataSource {
+        if !outlineGanttChart.isHidden {
+            outlineDataSource = OutlineDataSource(for: outlineGanttChart)
+            initializeOutlineDataSource()
+            outlineGanttChart.reloadData()
+            outlineView.expandItem(nil, expandChildren: true)
+        } else if itemSource === classicDataSource {
             classicDataSource = prepareClassicDataSource()
             initializeClassicDataSource()
         } else {
@@ -195,14 +269,25 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     }
     
     @IBAction func addItem(_ button: NSButton) {
-        guard contentController.settings.allowsCreatingBars else { return }
-        isAddingItemInternally = true
-        let row = itemManager.totalRowCount
         let time = contentController.visibleTimeline.start
-        let item = itemManager.addNewItem(on: row, at: time)
-        contentController.selectedItem = item
-        contentController.scrollVertically(to: row)
-        isAddingItemInternally = false
+        if !outlineGanttChart.isHidden {
+            let row = outlineView.numberOfRows
+            outlineDataSource.rows.append(OutlineDataSource.Row(
+                chartItems: [OutlineDataSource.ChartItem(
+                    label: "New item", start: time, finish: time.adding(hours: 24))],
+                children: []))
+            outlineGanttChart.reloadData()
+            outlineGanttChart.scrollRowToVisible(row)
+            outlineView.selectRowIndexes([row], byExtendingSelection: false)
+        } else {
+            guard contentController.settings.allowsCreatingBars else { return }
+            isAddingItemInternally = true
+            let row = min(itemManager.totalRowCount, VirtualizedItemManager.initialTotalRowCount - 1)
+            let item = itemManager.addNewItem(on: row, at: time)
+            contentController.selectedItem = item
+            contentController.scrollVertically(to: row)
+            isAddingItemInternally = false
+        }
     }
     func itemWasAdded(_ item: GanttChartItem) {
         if !item.isMilestone {
@@ -221,16 +306,34 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     var isAddingItemInternally = false
     
     @IBAction func removeItem(_ button: NSButton) {
-        if let item = contentController.selectedItem {
-            guard contentController.settings.allowsDeletingBar(for: item)
-                else { return }
-            itemManager.removeItem(item)
-        } else if let dependency = contentController.selectedDependency {
-            guard contentController.settings.allowsDeletingDependencyLine(for: dependency)
-                else { return }
-            itemManager.removeDependency(dependency)
+        if !outlineGanttChart.isHidden {
+            let selectedRowIndexes = outlineView.selectedRowIndexes
+            if selectedRowIndexes.count > 0 {
+                let selectedRows = selectedRowIndexes.map { index in
+                    outlineView.item(atRow: index) as! OutlineGanttChartRow }
+                removeOutlineItemsFor(selectedRows, from: &outlineDataSource.rows)
+                outlineGanttChart.reloadData()
+            }
+        } else {
+            if let item = contentController.selectedItem {
+                guard contentController.settings.allowsDeletingBar(for: item)
+                    else { return }
+                itemManager.removeItem(item)
+            } else if let dependency = contentController.selectedDependency {
+                guard contentController.settings.allowsDeletingDependencyLine(for: dependency)
+                    else { return }
+                itemManager.removeDependency(dependency)
+            }
+            contentController.selectedItem = nil
         }
-        contentController.selectedItem = nil
+    }
+    func removeOutlineItemsFor(_ selectedRows: [OutlineGanttChartRow],
+                               from array: inout [OutlineDataSource.Row]) {
+        array.removeAll { row in selectedRows.contains { selectedRow in
+            selectedRow.context as! OutlineDataSource.Row === row }}
+        for item in array {
+            removeOutlineItemsFor(selectedRows, from: &item.children)
+        }
     }
     func itemWasRemoved(_ item: GanttChartItem) {
         guard hierarchicalBehavior == 1 else { return }
@@ -240,29 +343,33 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     }
     
     @IBAction func exportImage(_ button: NSButton) {
+        if !outlineGanttChart.isHidden {
+            outlineView.selectRowIndexes([], byExtendingSelection: false)
+        }
         contentController.selectedItem = nil
         let savePanel = NSSavePanel()
         savePanel.allowedFileTypes = ["png"]
         if savePanel.runModal() == NSApplication.ModalResponse.OK {
             let filename = savePanel.url!
-            let imageData = ganttChart.imageData
+            let imageData = !outlineGanttChart.isHidden
+                ? outlineGanttChart.imageData : ganttChart.imageData
             do { try imageData.write(to: filename) } catch { }
         }
     }
     
     func prepareCustomTheme() {
         let themeName = "Demo"
-        var style = GanttChartContentStyle(.standard)
+        var style = GanttChartContentBaseStyle(.standard)
         style.backgroundColor = Color(red: 0.5, green: 0.75, blue: 1, alpha: 0.125)
         style.barFillColor = .orange
         style.selectionColor = Color(red: 0.7, green: 0.7, blue: 0.7)
-        var darkStyle = GanttChartContentStyle(.standard, mode: .dark)
+        var darkStyle = GanttChartContentBaseStyle(.standard, mode: .dark)
         darkStyle.backgroundColor = Color(red: 0.25, green: 0.375, blue: 0.5, alpha: 0.25)
         darkStyle.barFillColor = .orange
         darkStyle.selectionColor = Color(red: 0.7, green: 0.7, blue: 0.7)
-        var headerStyle = GanttChartHeaderStyle(.standard)
+        var headerStyle = GanttChartHeaderBaseStyle(.standard)
         headerStyle.labelForegroundColor = Color(red: 0.25, green: 0.5, blue: 0.75)
-        var darkHeaderStyle = GanttChartHeaderStyle(.standard, mode: .dark)
+        var darkHeaderStyle = GanttChartHeaderBaseStyle(.standard, mode: .dark)
         darkHeaderStyle.labelForegroundColor = Color(red: 0.5, green: 0.75, blue: 0.875)
         contentController.setStyleForTheme(themeName, to: style)
         contentController.setStyleForTheme(themeName, mode: .dark, to: darkStyle)
@@ -285,17 +392,28 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         default: break
         }
         defaultTheme = controller.theme
-        isModeEnabled = 1
     }
     var defaultTheme = Theme.standard
     
+    func outlineViewSelectionDidChange(_ notification: Notification) {
+        if !outlineGanttChart.isHidden {
+            let toolbarItems = view.window!.toolbar!.items
+            let removeItem = toolbarItems.filter { item in item.label == "Remove" }.first!
+            removeItem.isEnabled = outlineView.selectedRowIndexes.count > 0
+        }
+        if !outlineGanttChart.isHidden && !outlineView.selectedRowIndexes.isEmpty {
+            contentController.selectedItem = nil
+        }
+    }
     func selectionDidChange() {
         let selectedItem = contentController.selectedItem
         selectedItem?.hasChanged = true
         let isItemSelected = selectedItem != nil
         let toolbarItems = view.window!.toolbar!.items
-        let removeItem = toolbarItems.filter { item in item.label == "Remove" }.first!
-        removeItem.isEnabled = isItemSelected
+        if outlineGanttChart.isHidden {
+            let removeItem = toolbarItems.filter { item in item.label == "Remove" }.first!
+            removeItem.isEnabled = isItemSelected
+        }
         let editSegmentedControl =
             toolbarItems.filter { item in item.label == "Edit" }.first!
                 .view as! NSSegmentedControl
@@ -307,6 +425,9 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             selectionTabView.selectTabViewItem(at: isItemSelected ? 1 : 0)
         }
         initializeItem()
+        if !outlineGanttChart.isHidden && selectedItem != nil {
+            outlineView.selectRowIndexes([], byExtendingSelection: false)
+        }
     }
     @IBAction func editTabSelectionDidChange(_ segmentedControl: NSSegmentedControl) {
         let tabIndex = segmentedControl.selectedSegment
@@ -322,6 +443,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             NSColorPanel.setPickerMode(.crayon)
             NSColorPanel.shared.showsAlpha = true
         }
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, shouldEdit tableColumn: NSTableColumn?, item: Any) -> Bool {
+        let outlineItem = item as! OutlineGanttChartRow, chartItem = outlineItem.chartItems.first!
+        return !contentSettings.isReadOnly && !chartItem.settings.isReadOnly
     }
     
     func initializeEditableValues() {
@@ -393,11 +519,24 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     }
     @objc dynamic var isRowCountEditingEnabled = true
     
+    func totalContentRowCountDidChange() {
+        guard contentController != nil else { return }
+        rowCount = contentController.actualRowCount as NSNumber
+    }
+    func timelineDidChange() {
+        guard contentController != nil else { return }
+        let timeline = contentController.actualTimeline
+        timelineStart = Date(timeline.start)
+        timelineFinish = Date(timeline.finish)
+    }
+    
     @objc dynamic var hourWidth: NSNumber? {
         didSet {
             guard hourWidth != oldValue else { return }
             guard let headerController = headerController else { return }
             headerController.hourWidth = hourWidth as? Double ?? defaultHourWidth
+            isUseCustomHeadersEnabled = outlineGanttChart.isHidden &&
+                zoom == 1 && hourWidth == defaultHourWidth as NSNumber
         }
     }
     var defaultHourWidth: Double!
@@ -433,14 +572,17 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             updateHeaderRows()
         }
     }
+    @objc dynamic var minHeaderRowCount: NSNumber?
     @objc dynamic var isHeaderRowCountEditingEnabled = true
     @objc dynamic var useCustomHeaders = NSNumber() {
         didSet {
             guard useCustomHeaders != oldValue else { return }
+            guard isUseCustomHeadersEnabled else { return }
             isHeaderRowCountEditingEnabled = useCustomHeaders == 0
             updateHeaderRows()
         }
     }
+    @objc dynamic var isUseCustomHeadersEnabled = true
     
     @objc dynamic var selectedHeaderRowIndex: NSNumber? {
         didSet {
@@ -544,7 +686,6 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
                 }
             }
             if let formatter = formatter {
-                headerRowCustomFormat = formatter.dateFormat
                 if formatter.dateStyle == .short && formatter.timeStyle == .short {
                     headerRowFormat = 0
                 } else {
@@ -634,6 +775,9 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
                                 }
                         }
                     }
+                }
+                if headerRowFormat!.intValue >= 6 && headerRowFormat!.intValue != 39 {
+                    headerRowCustomFormat = formatter.dateFormat
                 }
             }
         }
@@ -953,7 +1097,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             default:
                 unit = .weeks
             }
-            let since = itemSource === classicDataSource
+            let since = !outlineGanttChart.isHidden || itemSource === classicDataSource
                 ? Time.current.weekStart : Time.reference
             format = .numeric(since: since, in: unit, schedule: schedule,
                               zeroBased: headerRowNumericFormatStartingAtZero == 1,
@@ -974,8 +1118,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     }
     
     func rows(for hourWidth: Double) -> [GanttChartHeaderRow]? {
-        if itemSource === classicDataSource {
-            if hourWidth < classicCustomZoomOutHourWidth {
+        if !outlineGanttChart.isHidden || itemSource === classicDataSource {
+            if outlineGanttChart.isHidden && hourWidth < classicCustomZoomOutHourWidth {
                 return classicCustomZoomOutHeaderRows
             } else {
                 return classicHeaderRows
@@ -997,7 +1141,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         }
     }
     var defaultHeaderRowHeight: Double!
-    
+    @objc dynamic var minHeaderRowHeight: NSNumber?
+
     @objc dynamic var highlightingType: NSNumber? {
         didSet {
             guard highlightingType != oldValue else { return }
@@ -1128,6 +1273,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
                 itemUpdateGranularity = 3
             }
             itemUpdateGranularityPeriod = period as NSNumber?
+        @unknown default:
+            fatalError()
         }
         isInitializingItemUpdateGranularityInternally = false
     }
@@ -1197,8 +1344,9 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         allowsSelectingElements = contentSettings.allowsSelectingElements ? 1 : 0
         allowsZooming = headerSettings.allowsZooming ? 1 : 0
         itemSourceBehaviorsEnabled = itemSource != nil ? 1 : 0
-        columnBehavior = itemSource?.isColumn ?? false ? 1 : 0
-        hierarchicalBehavior = itemSource?.hierarchicalRelations != nil ? 1 : 0
+        isAutoSchedulingBehaviorEnabled = !outlineGanttChart.isHidden || itemSource != nil ? 1 : 0
+        columnBehavior = !outlineGanttChart.isHidden || itemSource?.isColumn ?? false ? 1 : 0
+        hierarchicalBehavior = !outlineGanttChart.isHidden || itemSource?.hierarchicalRelations != nil ? 1 : 0
         defaultHierarchicalRelations = itemSource?.hierarchicalRelations
         autoSchedulingBehavior = itemSource?.isAutoScheduling ?? false ? 1 : 0
         isInitializingSettingsInternally = false
@@ -1381,10 +1529,16 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     @objc dynamic var autoSchedulingBehavior = NSNumber() {
         didSet {
             guard !isInitializingSettingsInternally else { return }
-            itemSource?.isAutoScheduling = autoSchedulingBehavior == 1
-            itemSource?.applyBehavior()
+            if !outlineGanttChart.isHidden {
+                outlineGanttChart.isAutoScheduling = autoSchedulingBehavior == 1
+                outlineGanttChart.applyBehavior()
+            } else {
+                itemSource?.isAutoScheduling = autoSchedulingBehavior == 1
+                itemSource?.applyBehavior()
+            }
         }
     }
+    @objc dynamic var isAutoSchedulingBehaviorEnabled = NSNumber()
     var isInitializingSettingsInternally = false
     var contentSettings: GanttChartContentSettings {
         get { return contentController.settings }
@@ -1440,6 +1594,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         case .left: labelAlignment = 0
         case .center: labelAlignment = 1
         case .right: labelAlignment = 2
+        case .none: labelAlignment = nil
+        @unknown default: fatalError()
         }
         labelInset = contentStyle.horizontalLabelInset as NSNumber?
         attachmentForeground = NSColor(contentStyle.attachmentForegroundColor)
@@ -1449,8 +1605,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         dependencyLineWidth = contentStyle.dependencyLineWidth as NSNumber?
         dependencyLineFocusWidth = contentStyle.dependencyLineFocusWidth as NSNumber?
         dependencyLineSelectionWidth = contentStyle.dependencyLineSelectionWidth as NSNumber?
-        isAlternativeRowsBackgroundEnabled = contentStyle.alternativeRowStyle.backgroundColor != nil ? 1 : 0
-        alternativeRowsBackground = NSColor(contentStyle.alternativeRowStyle.backgroundColor)
+        isAlternativeRowsBackgroundEnabled = contentStyle.alternativeRowStyle?.backgroundColor != nil ? 1 : 0
+        alternativeRowsBackground = NSColor(contentStyle.alternativeRowStyle?.backgroundColor)
         scheduleHighlight = NSColor(contentStyle.highlightingTimeoutFillColor)
         isHeaderBackgroundEnabled = headerStyle.backgroundColor != nil ? 1 : 0
         headerBackground = NSColor(headerStyle.backgroundColor)
@@ -1514,53 +1670,52 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     func updateStyle() {
         guard !isInitializingStyleInternally else { return }
         contentStyle.backgroundColor = isBackgroundEnabled == 1 ? Color(background) : nil
-        contentStyle.barFillColor = Color(barFill!)
+        contentStyle.barFillColor = Color(barFill)
         contentStyle.secondaryBarFillColor = isSecondaryBarFillEnabled == 1 ? Color(secondaryBarFill) : nil
         contentStyle.barStrokeColor = isBarStrokeEnabled == 1 ? Color(barStroke) : nil
-        contentStyle.labelForegroundColor = Color(labelForeground!)
-        contentStyle.barFillColorForType[.milestone] = Color(milestoneBarFill!)
+        contentStyle.labelForegroundColor = Color(labelForeground)
+        contentStyle.barFillColorForType[.milestone] = Color(milestoneBarFill)
         contentStyle.secondaryBarFillColorForType[.milestone] = isSecondaryMilestoneBarFillEnabled == 1 ? Color(secondaryMilestoneBarFill) : nil
         contentStyle.barStrokeColorForType[.milestone] = isMilestoneBarStrokeEnabled == 1 ? Color(milestoneBarStroke) : nil
         contentStyle.labelForegroundColorForType[.milestone] = isMilestoneLabelForegroundEnabled == 1 ? Color(milestoneLabelForeground) : nil
-        contentStyle.barFillColorForType[.summary] = Color(summaryBarFill!)
+        contentStyle.barFillColorForType[.summary] = Color(summaryBarFill)
         contentStyle.secondaryBarFillColorForType[.summary] = isSecondarySummaryBarFillEnabled == 1 ? Color(secondarySummaryBarFill) : nil
         contentStyle.barStrokeColorForType[.summary] = isSummaryBarStrokeEnabled == 1 ? Color(summaryBarStroke) : nil
         contentStyle.labelForegroundColorForType[.summary] = isSummaryLabelForegroundEnabled == 1 ? Color(summaryLabelForeground) : nil
-        contentStyle.barStrokeWidth = barStrokeWidth as? Double ?? 1
-        contentStyle.completionBarFillColor = Color(completionBarFill!)
+        contentStyle.barStrokeWidth = barStrokeWidth as? Double
+        contentStyle.completionBarFillColor = Color(completionBarFill)
         contentStyle.secondaryCompletionBarFillColor = isSecondaryCompletionBarFillEnabled == 1 ? Color(secondaryCompletionBarFill) : nil
         contentStyle.completionBarStrokeColor = isCompletionBarStrokeEnabled == 1 ? Color(completionBarStroke) : nil
-        contentStyle.completionBarStrokeWidth = completionBarStrokeWidth as? Double ?? 1
-        contentStyle.cornerRadius = cornerRadius as? Double ?? 0
+        contentStyle.completionBarStrokeWidth = completionBarStrokeWidth as? Double
+        contentStyle.cornerRadius = cornerRadius as? Double
         contentStyle.completionCornerRadius = completionCornerRadius as? Double
-        contentStyle.verticalBarInset = barInset as? Double ?? 1
-        contentStyle.verticalCompletionBarInset = completionBarInset as? Double ?? 1
-        contentStyle.horizontalCompletionBarInset = min(1, contentStyle.verticalCompletionBarInset)
+        contentStyle.verticalBarInset = barInset as? Double
+        contentStyle.verticalCompletionBarInset = completionBarInset as? Double
+        contentStyle.horizontalCompletionBarInset = contentStyle.verticalCompletionBarInset != nil ? min(1, contentStyle.verticalCompletionBarInset!) : nil
         contentStyle.focusColor = isFocusBorderEnabled == 1 ? Color(focusBorder) : nil
-        contentStyle.focusWidth = focusBorderWidth as? Double ?? 1
+        contentStyle.focusWidth = focusBorderWidth as? Double
         contentStyle.selectionColor = isSelectionBorderEnabled == 1 ? Color(selectionBorder) : nil
-        contentStyle.selectionWidth = selectionBorderWidth as? Double ?? 1
+        contentStyle.selectionWidth = selectionBorderWidth as? Double
         switch labelAlignment {
         case 0: contentStyle.labelAlignment = .left
         case 1: contentStyle.labelAlignment = .center
         case 2: contentStyle.labelAlignment = .right
         default: contentStyle.labelAlignment = .left
         }
-        contentStyle.horizontalLabelInset = labelInset as? Double ?? 0
-        contentStyle.attachmentForegroundColor = Color(attachmentForeground!)
-        contentStyle.horizontalAttachmentInset = attachmentInset as? Double ?? 0
+        contentStyle.horizontalLabelInset = labelInset as? Double
+        contentStyle.attachmentForegroundColor = Color(attachmentForeground)
+        contentStyle.horizontalAttachmentInset = attachmentInset as? Double
         contentStyle.dependencyLineColor = isDependencyLineStrokeEnabled == 1 ? Color(dependencyLineStroke) : nil
-        contentStyle.dependencyLineWidth = dependencyLineWidth as? Double ?? 1
-        contentStyle.dependencyLineFocusWidth = dependencyLineFocusWidth as? Double ?? 1
-        contentStyle.dependencyLineSelectionWidth = dependencyLineSelectionWidth as? Double ?? 1
-        contentStyle.alternativeRowStyle.backgroundColor = isAlternativeRowsBackgroundEnabled == 1 ? Color(alternativeRowsBackground) : nil
-        contentStyle.highlightingTimeoutFillColor = Color(scheduleHighlight!)
+        contentStyle.dependencyLineWidth = dependencyLineWidth as? Double
+        contentStyle.dependencyLineFocusWidth = dependencyLineFocusWidth as? Double
+        contentStyle.dependencyLineSelectionWidth = dependencyLineSelectionWidth as? Double
+        contentStyle.alternativeRowStyle = isAlternativeRowsBackgroundEnabled == 1 && alternativeRowsBackground != nil ? GanttChartRowStyle(backgroundColor: Color(alternativeRowsBackground)) : nil
+        contentStyle.highlightingTimeoutFillColor = Color(scheduleHighlight)
         contentStyle.highlightingTimeFillColor = contentStyle.highlightingTimeoutFillColor
         contentController.settingsDidChange()
         headerStyle.backgroundColor = isHeaderBackgroundEnabled == 1 ? Color(headerBackground) : nil
-        headerStyle.labelForegroundColor = Color(headerLabelForeground!)
+        headerStyle.labelForegroundColor = Color(headerLabelForeground)
         headerController.settingsDidChange()
-        isModeEnabled = 0
     }
     var isInitializingStyleInternally = false
     var contentStyle: GanttChartContentStyle {
@@ -1577,12 +1732,18 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             if #available(OSX 10.14, *) {
                 switch mode {
                 case 0:
+                    outlineGanttChart.appearance = nil
                     ganttChart.appearance = nil
                 case 1:
-                    ganttChart.appearance = NSAppearance(named: .aqua)
+                    let appearance = NSAppearance(named: .aqua)
+                    outlineGanttChart.appearance = appearance
+                    ganttChart.appearance = appearance
                 case 2:
-                    ganttChart.appearance = NSAppearance(named: .darkAqua)
+                    let appearance = NSAppearance(named: .darkAqua)
+                    outlineGanttChart.appearance = appearance
+                    ganttChart.appearance = appearance
                 default:
+                    outlineGanttChart.appearance = nil
                     ganttChart.appearance = nil
                 }
             } else {
@@ -1599,7 +1760,6 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             }
         }
     }
-    @objc dynamic var isModeEnabled: NSNumber = 1
     
     func styleDidChange(to value: GanttChartContentStyle,
                         from originalValue: GanttChartContentStyle) {
@@ -1628,6 +1788,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             itemType = 1
         case .summary:
             itemType = 2
+        @unknown default:
+            fatalError()
         }
         itemRow = item.row as NSNumber?
         initializeItemConstraints()
@@ -1644,6 +1806,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             guard let item = selectedItem else { return }
             item.label = itemLabel
             contentController.collectionDidChange()
+            if !outlineGanttChart.isHidden {
+                let outlineItem = outlineView.item(atRow: item.row) as! OutlineGanttChartRow
+                outlineItem.chartItems.first!.label = item.label
+                outlineView.reloadItem(outlineItem)
+            }
         }
     }
     @objc dynamic var itemStart = Date() {
@@ -1671,6 +1838,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             guard let item = selectedItem else { return }
             item.completion = itemCompletion as? Double ?? 0
             itemManager.collectionDidChange()
+            if !outlineGanttChart.isHidden {
+                let outlineItem = outlineView.item(atRow: item.row) as! OutlineGanttChartRow
+                outlineItem.chartItems.first!.completion = item.completion
+                outlineView.reloadItem(outlineItem)
+            }
         }
     }
     @objc dynamic var itemAttachment: String? {
@@ -1680,6 +1852,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             guard let item = selectedItem else { return }
             item.attachment = itemAttachment
             contentController.collectionDidChange()
+            if !outlineGanttChart.isHidden {
+                let outlineItem = outlineView.item(atRow: item.row) as! OutlineGanttChartRow
+                outlineItem.chartItems.first!.attachment = item.attachment
+                outlineView.reloadItem(outlineItem)
+            }
         }
     }
     @objc dynamic var itemDetails: String? {
@@ -1688,6 +1865,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             guard !isInitializingItemInternally else { return }
             guard let item = selectedItem else { return }
             item.details = itemDetails
+            if !outlineGanttChart.isHidden {
+                let outlineItem = outlineView.item(atRow: item.row) as! OutlineGanttChartRow
+                outlineItem.chartItems.first!.details = item.details
+                outlineView.reloadItem(outlineItem)
+            }
         }
     }
     @objc dynamic var itemType: NSNumber? {
@@ -1702,6 +1884,11 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
                 item.type = .milestone
                 item.finish = item.start
                 timeDidChange(for: item)
+                if !outlineGanttChart.isHidden {
+                    let outlineItem = outlineView.item(atRow: item.row) as! OutlineGanttChartRow
+                    outlineItem.chartItems.first!.finish = item.finish
+                    outlineView.reloadItem(outlineItem)
+                }
             case 2:
                 item.type = .summary
             default:
@@ -1718,6 +1905,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             itemManager.updateRow(for: item, to: itemRow as? Int ?? 0)
         }
     }
+    @objc dynamic var isItemRowEditingEnabled = true
     
     func initializeItemConstraints() {
         guard let item = selectedItem else { return }
@@ -1929,6 +2117,9 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             isInitializingItemInternally = true
             initializeItemSettings()
             isInitializingItemInternally = wasInitializingInternally
+            if let outlineChartItem = item.context as? OutlineGanttChartItem {
+                outlineChartItem.settings.isReadOnly = item.settings.isReadOnly
+            }
         }
     }
     
@@ -1986,7 +2177,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     }
     
     var isInitializingItemInternally = false
-    var selectedItem: GanttChartItem? { return contentController.selectedItem }
+    var selectedItem: GanttChartItem? { return contentController?.selectedItem }
     
     func timeDidChange(for item: GanttChartItem, from originalValue: TimeRange) {
         timeDidChange(for: item)
@@ -2027,33 +2218,32 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         isInitializingItemInternally = false
     }
     
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "visibilityScheduleSegue":
-            visibilityScheduleViewController =
-                segue.destinationController as? ScheduleViewController
-            visibilityScheduleViewController.observer = self
-        case "highlightingScheduleSegue":
-            highlightingScheduleViewController =
-                segue.destinationController as? ScheduleViewController
-            highlightingScheduleViewController.observer = self
-        case "itemsScheduleSegue":
-            itemsScheduleViewController =
-                segue.destinationController as? ScheduleViewController
-            itemsScheduleViewController.observer = self
-        case "selectedItemScheduleSegue":
-            selectedItemScheduleViewController =
-                segue.destinationController as? ScheduleViewController
-            selectedItemScheduleViewController.observer = self
-        default: break
-        }
+    @IBSegueAction func visibilityScheduleViewController(coder: NSCoder) -> ScheduleViewController? {
+        visibilityScheduleViewController = ScheduleViewController(coder: coder)
+        visibilityScheduleViewController.observer = self
+        return visibilityScheduleViewController
+    }
+    @IBSegueAction func highlightingScheduleViewController(coder: NSCoder) -> ScheduleViewController? {
+        highlightingScheduleViewController = ScheduleViewController(coder: coder)
+        highlightingScheduleViewController.observer = self
+        return highlightingScheduleViewController
+    }
+    @IBSegueAction func itemsScheduleViewController(coder: NSCoder) -> ScheduleViewController? {
+        itemsScheduleViewController = ScheduleViewController(coder: coder)
+        itemsScheduleViewController.observer = self
+        return itemsScheduleViewController
+    }
+    @IBSegueAction func selectedItemScheduleViewController(coder: NSCoder) -> ScheduleViewController? {
+        selectedItemScheduleViewController = ScheduleViewController(coder: coder)
+        selectedItemScheduleViewController.observer = self
+        return selectedItemScheduleViewController
     }
     
     var visibilityScheduleViewController: ScheduleViewController! {
         didSet { initializeVisibilitySchedule() }
     }
     func initializeVisibilitySchedule() {
-        guard visibilityScheduleViewController != nil else { return }
+        guard visibilityScheduleViewController != nil, contentController != nil else { return }
         visibilityScheduleViewController.schedule = contentController.visibilitySchedule
         visibilityScheduleViewController.isExcludedIntervalsEditingEnabled =
             isVisibilityScheduleExcludedIntervalsEditingEnabled
@@ -2072,7 +2262,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         didSet { initializeItemsSchedule() }
     }
     func initializeItemsSchedule() {
-        guard itemsScheduleViewController != nil else { return }
+        guard itemsScheduleViewController != nil, itemManager != nil else { return }
         itemsScheduleViewController.schedule = itemManager.schedule
     }
     
@@ -2080,13 +2270,14 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         didSet { initializeSelectedItemSchedule() }
     }
     func initializeSelectedItemSchedule() {
-        guard selectedItemScheduleViewController != nil else { return }
+        guard selectedItemScheduleViewController != nil, itemManager != nil else { return }
         selectedItemScheduleViewController.schedule = selectedItem?.schedule
             ?? itemManager.schedule
         selectedItemScheduleViewController.isEnabled = itemScheduleInherits == 0
     }
     
     var highlighter: ScheduleTimeSelector? {
+        guard contentController != nil else { return nil }
         return contentController.scheduleHighlighters.first
     }
     

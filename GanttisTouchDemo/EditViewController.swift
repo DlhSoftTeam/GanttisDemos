@@ -75,6 +75,7 @@ class EditViewController: UIViewController, UITextFieldDelegate, UIPickerViewDat
             typePicker.selectRow(1, inComponent: 0, animated: false)
         case .summary:
             typePicker.selectRow(2, inComponent: 0, animated: false)
+        @unknown default: fatalError()
         }
         rowTextField.text = String(item.row)
     }

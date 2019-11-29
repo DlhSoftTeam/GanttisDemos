@@ -66,12 +66,13 @@ class VirtualizedItemManager: GanttChartItemManager {
     }
     
     func currentItems(range: RowRange, timeline: TimeRange) -> [GanttChartItem] {
-        return addedItems + cacheItems(range: range, timeline: timeline)
+        return cacheItems(range: range, timeline: timeline) + addedItems
     }
     func currentDependencies(range: RowRange,
                              timeline: TimeRange) -> [GanttChartDependency] {
-        return addedDependencies + (withAutoDependencies
+        return (withAutoDependencies
             ? autoDependencies(cacheItems(range: range, timeline: timeline)) : [])
+            + addedDependencies
     }
     
     var addedItems = [GanttChartItem]()
@@ -141,6 +142,7 @@ var virtualizedDataManager = prepareVirtualizedDataManager()
 
 let virtualizedScheduleHighlighters = [ScheduleTimeSelector]()
 let virtualizedIntervalHighlighters = [TimeSelector(.weeks)]
+let virtualizedTimeScale = TimeScale.continuous
 let virtualizedHeaderRows = [
     GanttChartHeaderRow(.weeks,
                         format: .numeric(since: virtualizedProjectStart, in: .weeks)),

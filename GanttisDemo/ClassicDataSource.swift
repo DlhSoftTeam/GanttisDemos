@@ -292,6 +292,7 @@ let classicVisibilitySchedule = Schedule.fullWeek
 let classicScheduleHighlighters = [ScheduleTimeSelector(.weekends)]
 let classicIntervalHighlighters = [TimeSelector(.weeks),
                                    TimeSelector(.time(classicProjectStart.adding(days: 4)))]
+let classicTimeScale = TimeScale.intervalsWith(period: 15, in: .minutes)
 let classicHeaderRows =
     [GanttChartHeaderRow(.weeks, format: "dd MMM"),
      GanttChartHeaderRow(.days, format: .dayOfWeekShortAbbreviation)]
