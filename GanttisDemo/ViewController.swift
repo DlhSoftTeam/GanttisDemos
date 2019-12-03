@@ -377,23 +377,28 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         headerController.setStyleForTheme(themeName, mode: .dark, to: darkHeaderStyle)
     }
     func initializeTheme() {
-        controller.theme = defaultTheme
+        controller.theme = theme
     }
     @IBAction func themeSelectionDidChange(_ segmentedControl: NSSegmentedControl) {
-        switch segmentedControl.selectedSegment {
-        case 0:
-            controller.theme = .standard
-        case 1:
-            controller.theme = .aqua
-        case 2:
-            controller.theme = .jewel
-        case 3:
-            controller.theme = .custom(name: "Demo")
-        default: break
-        }
-        defaultTheme = controller.theme
+        initializeTheme()
     }
-    var defaultTheme = Theme.standard
+    var theme: Theme {
+        guard let window = view.window else { return .standard }
+        let toolbarItems = window.toolbar!.items
+        let themeToolbarItem = toolbarItems.filter { item in item.label == "Theme" }.first!
+        let themeSegmentedControl = themeToolbarItem.view as! NSSegmentedControl
+        switch themeSegmentedControl.selectedSegment {
+        case 0:
+            return .standard
+        case 1:
+            return .aqua
+        case 2:
+            return .jewel
+        case 3:
+            return .custom(name: "Demo")
+        default: fatalError()
+        }
+    }
     
     func outlineViewSelectionDidChange(_ notification: Notification) {
         if !outlineGanttChart.isHidden {
@@ -2237,6 +2242,31 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         selectedItemScheduleViewController = ScheduleViewController(coder: coder)
         selectedItemScheduleViewController.observer = self
         return selectedItemScheduleViewController
+    }
+    
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+        guard #available(macOS 10.15, *) else {
+            switch segue.identifier {
+            case "visibilityScheduleSegue":
+                visibilityScheduleViewController =
+                    segue.destinationController as? ScheduleViewController
+                visibilityScheduleViewController.observer = self
+            case "highlightingScheduleSegue":
+                highlightingScheduleViewController =
+                    segue.destinationController as? ScheduleViewController
+                highlightingScheduleViewController.observer = self
+            case "itemsScheduleSegue":
+                itemsScheduleViewController =
+                    segue.destinationController as? ScheduleViewController
+                itemsScheduleViewController.observer = self
+            case "selectedItemScheduleSegue":
+                selectedItemScheduleViewController =
+                    segue.destinationController as? ScheduleViewController
+                selectedItemScheduleViewController.observer = self
+            default: break
+            }
+            return
+        }
     }
     
     var visibilityScheduleViewController: ScheduleViewController! {

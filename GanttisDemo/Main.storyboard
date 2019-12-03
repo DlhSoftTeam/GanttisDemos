@@ -1654,7 +1654,7 @@
                                                                                                             <rect key="frame" x="20" y="489" width="280" height="120"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <connections>
-                                                                                                                <segue destination="CRU-gM-4k3" kind="embed" identifier="" destinationCreationSelector="visibilityScheduleViewControllerWithCoder:" id="8el-ti-bqH"/>
+                                                                                                                <segue destination="CRU-gM-4k3" kind="embed" identifier="visibilityScheduleSegue" destinationCreationSelector="visibilityScheduleViewControllerWithCoder:" id="8el-ti-bqH"/>
                                                                                                             </connections>
                                                                                                         </containerView>
                                                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="B1i-RO-Us3">
@@ -1674,7 +1674,7 @@
                                                                                                             <rect key="frame" x="20" y="326" width="280" height="120"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <connections>
-                                                                                                                <segue destination="pfP-ti-0QQ" kind="embed" identifier="" destinationCreationSelector="highlightingScheduleViewControllerWithCoder:" id="Bic-Sl-vo4"/>
+                                                                                                                <segue destination="pfP-ti-0QQ" kind="embed" identifier="highlightingScheduleSegue" destinationCreationSelector="highlightingScheduleViewControllerWithCoder:" id="Bic-Sl-vo4"/>
                                                                                                             </connections>
                                                                                                         </containerView>
                                                                                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmH-9c-32f">
@@ -1816,7 +1816,7 @@
                                                                                                             <rect key="frame" x="20" y="79" width="280" height="120"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <connections>
-                                                                                                                <segue destination="4hx-2w-Wp2" kind="embed" identifier="" destinationCreationSelector="itemsScheduleViewControllerWithCoder:" id="oU5-mG-FAk"/>
+                                                                                                                <segue destination="4hx-2w-Wp2" kind="embed" identifier="itemsScheduleSegue" destinationCreationSelector="itemsScheduleViewControllerWithCoder:" id="oU5-mG-FAk"/>
                                                                                                             </connections>
                                                                                                         </containerView>
                                                                                                         <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-0c-lAa">
@@ -1953,7 +1953,7 @@
                                                                                                             <rect key="frame" x="20" y="17" width="280" height="120"/>
                                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                                             <connections>
-                                                                                                                <segue destination="tnY-A3-6Az" kind="embed" identifier="" destinationCreationSelector="selectedItemScheduleViewControllerWithCoder:" id="3Yp-7O-gvQ"/>
+                                                                                                                <segue destination="tnY-A3-6Az" kind="embed" identifier="selectedItemScheduleSegue" destinationCreationSelector="selectedItemScheduleViewControllerWithCoder:" id="3Yp-7O-gvQ"/>
                                                                                                             </connections>
                                                                                                         </containerView>
                                                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxs-wH-GHv">
