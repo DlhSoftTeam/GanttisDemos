@@ -559,6 +559,8 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         selectedHeaderRowIndex = nil
         headerRowCount = headerController.rowCount as NSNumber
         useCustomHeaders = 0
+        isUseCustomHeadersEnabled = outlineGanttChart.isHidden &&
+            zoom == 1 && hourWidth == defaultHourWidth as NSNumber
         selectedHeaderRowIndex = 0
         isInitializingHeaderRowsInternally = false
     }
