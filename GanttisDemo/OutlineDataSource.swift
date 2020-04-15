@@ -284,16 +284,16 @@ class OutlineDataSource: OutlineGanttChartDataSource {
             NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .regular)
         outlineView.addTableColumn(completionColumn)
         
-        dateFormatter.timeZone = Time.calendar.timeZone
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-        
         attachmentColumn.title = "Assignments"
         outlineView.addTableColumn(attachmentColumn)
         
         detailsColumn.title = "Details"
         detailsColumn.minWidth = 120
         outlineView.addTableColumn(detailsColumn)
+
+        dateFormatter.timeZone = Time.calendar.timeZone
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
         
         outlineHeaderSpacingLabel.stringValue = "My project"
     }
@@ -312,7 +312,6 @@ class OutlineDataSource: OutlineGanttChartDataSource {
     var finishColumnCell: NSCell { return finishColumn.dataCell as! NSCell }
     var completionColumnCell: NSCell { return completionColumn.dataCell as! NSCell }
     var dateFormatter = DateFormatter()
-    var numberFormatter = NumberFormatter()
     
     var rows: [Row]
     var chartDependencies: [ChartDependency]
