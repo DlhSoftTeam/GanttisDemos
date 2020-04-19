@@ -10,10 +10,6 @@
 		BF176F16220450150079ABD3 /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF176F15220450150079ABD3 /* ClassicDataSource.swift */; };
 		BF176F19220458940079ABD3 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF176F17220458940079ABD3 /* EditViewController.swift */; };
 		BF176F1A220458940079ABD3 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF176F18220458940079ABD3 /* EditViewController.xib */; };
-		BF1D3E82244BB01700EA7149 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3E7F244BAFFF00EA7149 /* Ganttis.xcframework */; };
-		BF1D3E83244BB01700EA7149 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3E7F244BAFFF00EA7149 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		BF1D3E84244BB01C00EA7149 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3E7F244BAFFF00EA7149 /* Ganttis.xcframework */; };
-		BF1D3E85244BB01C00EA7149 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF1D3E7F244BAFFF00EA7149 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF319FDE21BBFA4900FF9DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF319FDD21BBFA4900FF9DBF /* AppDelegate.swift */; };
 		BF319FE021BBFA4900FF9DBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF319FDF21BBFA4900FF9DBF /* ViewController.swift */; };
 		BF319FE221BBFA4A00FF9DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF319FE121BBFA4A00FF9DBF /* Assets.xcassets */; };
@@ -25,6 +21,10 @@
 		BF4CEFF021EA129500AB60E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */; };
 		BF55D57721D62D2F00051ACE /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */; };
 		BF5A000E21EB89EF00E003CE /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5A000D21EB89EF00E003CE /* Support.swift */; };
+		BF5E2D02244C3809004D8177 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E2CFF244C3803004D8177 /* Ganttis.xcframework */; };
+		BF5E2D03244C3809004D8177 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E2CFF244C3803004D8177 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BF5E2D04244C380E004D8177 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E2CFF244C3803004D8177 /* Ganttis.xcframework */; };
+		BF5E2D05244C380E004D8177 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E2CFF244C3803004D8177 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF5FE06A236DD497006387A2 /* OutlineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE069236DD497006387A2 /* OutlineDataSource.swift */; };
 		BF91C59D21DFBD6D00521A99 /* VirtualizedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */; };
 		BFB5E61121F84FFA0026CEB8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */; };
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF1D3E83244BB01700EA7149 /* Ganttis.xcframework in Embed Frameworks */,
+				BF5E2D03244C3809004D8177 /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF1D3E85244BB01C00EA7149 /* Ganttis.xcframework in Embed Frameworks */,
+				BF5E2D05244C380E004D8177 /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +62,6 @@
 		BF176F15220450150079ABD3 /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
 		BF176F17220458940079ABD3 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		BF176F18220458940079ABD3 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
-		BF1D3E7F244BAFFF00EA7149 /* Ganttis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Ganttis.xcframework; sourceTree = "<group>"; };
 		BF319FDA21BBFA4900FF9DBF /* GanttisDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GanttisDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF319FDD21BBFA4900FF9DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF319FDF21BBFA4900FF9DBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
 		BF5A000D21EB89EF00E003CE /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		BF5E2CFF244C3803004D8177 /* Ganttis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Ganttis.xcframework; sourceTree = "<group>"; };
 		BF5FE069236DD497006387A2 /* OutlineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineDataSource.swift; sourceTree = "<group>"; };
 		BF703E462353831E00BCC1E4 /* GanttisTouchDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GanttisTouchDemo.entitlements; sourceTree = "<group>"; };
 		BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualizedDataSource.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF1D3E82244BB01700EA7149 /* Ganttis.xcframework in Frameworks */,
+				BF5E2D02244C3809004D8177 /* Ganttis.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF1D3E84244BB01C00EA7149 /* Ganttis.xcframework in Frameworks */,
+				BF5E2D04244C380E004D8177 /* Ganttis.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 		BFF1EA902362E4A700624DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF1D3E7F244BAFFF00EA7149 /* Ganttis.xcframework */,
+				BF5E2CFF244C3803004D8177 /* Ganttis.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = V6L9SVN7M4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -498,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = V6L9SVN7M4;
 				ENABLE_HARDENED_RUNTIME = YES;
