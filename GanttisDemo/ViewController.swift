@@ -1539,6 +1539,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
             if !outlineGanttChart.isHidden {
                 outlineGanttChart.isAutoScheduling = autoSchedulingBehavior == 1
                 outlineGanttChart.applyBehavior()
+                outlineGanttChart.autoApplyBehavior = outlineGanttChart.isAutoScheduling
             } else {
                 itemSource?.isAutoScheduling = autoSchedulingBehavior == 1
                 itemSource?.applyBehavior()
