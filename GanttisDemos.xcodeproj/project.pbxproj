@@ -19,16 +19,16 @@
 		BF4CEFEC21EA114600AB60E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFEB21EA114600AB60E4 /* Main.storyboard */; };
 		BF4CEFEE21EA120800AB60E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFED21EA120800AB60E4 /* Main.storyboard */; };
 		BF4CEFF021EA129500AB60E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */; };
+		BF4D588E249CE8F2008E95FF /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4D588B249CE8ED008E95FF /* Ganttis.xcframework */; };
+		BF4D588F249CE8F2008E95FF /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF4D588B249CE8ED008E95FF /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BF4D5890249CE8F6008E95FF /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4D588B249CE8ED008E95FF /* Ganttis.xcframework */; };
+		BF4D5891249CE8F6008E95FF /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF4D588B249CE8ED008E95FF /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF55D57721D62D2F00051ACE /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */; };
 		BF5A000E21EB89EF00E003CE /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5A000D21EB89EF00E003CE /* Support.swift */; };
 		BF5FE06A236DD497006387A2 /* OutlineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE069236DD497006387A2 /* OutlineDataSource.swift */; };
 		BF91C59D21DFBD6D00521A99 /* VirtualizedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */; };
 		BFB5E61121F84FFA0026CEB8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */; };
 		BFB5E61221F84FFA0026CEB8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */; };
-		BFDF1ED22472EE500083DE41 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDF1ED02472EE4B0083DE41 /* Ganttis.xcframework */; };
-		BFDF1ED32472EE500083DE41 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFDF1ED02472EE4B0083DE41 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		BFDF1ED42472EE620083DE41 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDF1ED02472EE4B0083DE41 /* Ganttis.xcframework */; };
-		BFDF1ED52472EE620083DE41 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFDF1ED02472EE4B0083DE41 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BFEB2D2F21BBFBCF0088279E /* GanttChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB2D2E21BBFBCF0088279E /* GanttChart.swift */; };
 		BFEB2D3121BBFC470088279E /* GanttChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEB2D3021BBFC470088279E /* GanttChart.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BFDF1ED32472EE500083DE41 /* Ganttis.xcframework in Embed Frameworks */,
+				BF4D588F249CE8F2008E95FF /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BFDF1ED52472EE620083DE41 /* Ganttis.xcframework in Embed Frameworks */,
+				BF4D5891249CE8F6008E95FF /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +76,7 @@
 		BF4CEFEB21EA114600AB60E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF4CEFED21EA120800AB60E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF4D588B249CE8ED008E95FF /* Ganttis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Ganttis.xcframework; sourceTree = "<group>"; };
 		BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
 		BF5A000D21EB89EF00E003CE /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		BF5FE069236DD497006387A2 /* OutlineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineDataSource.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualizedDataSource.swift; sourceTree = "<group>"; };
 		BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleViewController.xib; sourceTree = "<group>"; };
-		BFDF1ED02472EE4B0083DE41 /* Ganttis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Ganttis.xcframework; sourceTree = "<group>"; };
 		BFEB2D2E21BBFBCF0088279E /* GanttChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChart.swift; sourceTree = "<group>"; };
 		BFEB2D3021BBFC470088279E /* GanttChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanttChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFDF1ED22472EE500083DE41 /* Ganttis.xcframework in Frameworks */,
+				BF4D588E249CE8F2008E95FF /* Ganttis.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFDF1ED42472EE620083DE41 /* Ganttis.xcframework in Frameworks */,
+				BF4D5890249CE8F6008E95FF /* Ganttis.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 		BFF1EA902362E4A700624DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BFDF1ED02472EE4B0083DE41 /* Ganttis.xcframework */,
+				BF4D588B249CE8ED008E95FF /* Ganttis.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = V6L9SVN7M4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -498,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = V6L9SVN7M4;
 				ENABLE_HARDENED_RUNTIME = YES;
