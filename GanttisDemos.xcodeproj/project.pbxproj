@@ -111,7 +111,6 @@
 		BF319FCF21BBF9FF00FF9DBF = {
 			isa = PBXGroup;
 			children = (
-				BF72E6A9249E11850051ED78 /* Ganttis.xcframework */,
 				BF319FDC21BBFA4900FF9DBF /* GanttisDemo */,
 				BF319FF021BBFA7500FF9DBF /* GanttisTouchDemo */,
 				BF319FDB21BBFA4900FF9DBF /* Products */,
@@ -169,6 +168,7 @@
 		BFF1EA902362E4A700624DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF72E6A9249E11850051ED78 /* Ganttis.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
