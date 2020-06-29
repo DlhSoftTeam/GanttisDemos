@@ -286,7 +286,7 @@ var classicScrollableTimeline: TimeRange {
     return TimeRange(from: projectStart, to: projectStart.adding(days: 71))
 }
 
-let classicHourWidth = 4.0
+let classicHourWidth = 4.2
 let classicVisibilitySchedule = Schedule.fullWeek
 
 let classicScheduleHighlighters = [ScheduleTimeSelector(.weekends)]
@@ -295,8 +295,3 @@ let classicIntervalHighlighters = [TimeSelector(.weeks),
 let classicHeaderRows =
     [GanttChartHeaderRow(.weeks, format: "dd MMM"),
      GanttChartHeaderRow(.days, format: .dayOfWeekShortAbbreviation)]
-let classicCustomZoomOutHeaderRows =
-    [GanttChartHeaderRow(.months),
-     GanttChartHeaderRow(.weeks, format: "dd"),
-     GanttChartHeaderRow(.days, format: .dayOfWeekShortAbbreviation)]
-let classicCustomZoomOutHourWidth = 7.5
