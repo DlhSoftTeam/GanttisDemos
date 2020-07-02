@@ -84,6 +84,7 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
         initializeEditableValues()
         minHeaderRowCount = 1
         minHeaderRowHeight = defaultHeaderRowHeight as NSNumber
+        outlineGanttChart.autoApplySchedule = true
     }
     lazy var outlineDataSource = OutlineDataSource(for: outlineGanttChart)
     
