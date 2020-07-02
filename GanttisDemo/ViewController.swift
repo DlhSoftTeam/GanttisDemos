@@ -272,10 +272,12 @@ class ViewController: NSViewController, GanttChartItemObserver, GanttChartConten
     @IBAction func addItem(_ button: NSButton) {
         let time = contentController.visibleTimeline.start
         if !outlineGanttChart.isHidden {
-            let row = outlineView.numberOfRows
+            let row = outlineView.numberOfRows, schedule = itemManager.schedule
+            let start = schedule.nextTime(for: time)
+            let finish = max(start, schedule.previousTime(for: start.adding(hours: 24)))
             outlineDataSource.rows.append(OutlineDataSource.Row(
                 chartItems: [OutlineDataSource.ChartItem(
-                    label: "New item", start: time, finish: time.adding(hours: 24))],
+                    label: "New item", start: start, finish: finish)],
                 children: []))
             outlineGanttChart.reloadData()
             outlineGanttChart.scrollRowToVisible(row)
