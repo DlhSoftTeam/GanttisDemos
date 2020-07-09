@@ -21,10 +21,10 @@
 		BF4CEFF021EA129500AB60E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */; };
 		BF55D57721D62D2F00051ACE /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */; };
 		BF5A000E21EB89EF00E003CE /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5A000D21EB89EF00E003CE /* Support.swift */; };
-		BF5B727024B75391002582AA /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B726D24B7538C002582AA /* Ganttis.xcframework */; };
-		BF5B727124B75391002582AA /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B726D24B7538C002582AA /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		BF5B727224B75394002582AA /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B726D24B7538C002582AA /* Ganttis.xcframework */; };
-		BF5B727324B75394002582AA /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B726D24B7538C002582AA /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BF5B72A624B7837A002582AA /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B72A324B7836E002582AA /* Ganttis.xcframework */; };
+		BF5B72A724B7837A002582AA /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B72A324B7836E002582AA /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BF5B72A824B783A9002582AA /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B72A324B7836E002582AA /* Ganttis.xcframework */; };
+		BF5B72A924B783A9002582AA /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5B72A324B7836E002582AA /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF5FE06A236DD497006387A2 /* OutlineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE069236DD497006387A2 /* OutlineDataSource.swift */; };
 		BF91C59D21DFBD6D00521A99 /* VirtualizedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */; };
 		BFB5E61121F84FFA0026CEB8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */; };
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF5B727124B75391002582AA /* Ganttis.xcframework in Embed Frameworks */,
+				BF5B72A724B7837A002582AA /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +51,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF5B727324B75394002582AA /* Ganttis.xcframework in Embed Frameworks */,
+				BF5B72A924B783A9002582AA /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +78,7 @@
 		BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
 		BF5A000D21EB89EF00E003CE /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
-		BF5B726D24B7538C002582AA /* Ganttis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Ganttis.xcframework; sourceTree = "<group>"; };
+		BF5B72A324B7836E002582AA /* Ganttis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Ganttis.xcframework; sourceTree = "<group>"; };
 		BF5FE069236DD497006387A2 /* OutlineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineDataSource.swift; sourceTree = "<group>"; };
 		BF703E462353831E00BCC1E4 /* GanttisTouchDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GanttisTouchDemo.entitlements; sourceTree = "<group>"; };
 		BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualizedDataSource.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5B727024B75391002582AA /* Ganttis.xcframework in Frameworks */,
+				BF5B72A624B7837A002582AA /* Ganttis.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5B727224B75394002582AA /* Ganttis.xcframework in Frameworks */,
+				BF5B72A824B783A9002582AA /* Ganttis.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 		BFF1EA902362E4A700624DBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF5B726D24B7538C002582AA /* Ganttis.xcframework */,
+				BF5B72A324B7836E002582AA /* Ganttis.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = V6L9SVN7M4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -498,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = V6L9SVN7M4;
 				ENABLE_HARDENED_RUNTIME = YES;
