@@ -264,31 +264,31 @@ class OutlineDataSource: OutlineGanttChartDataSource {
         
         outlineColumn.title = "Tasks"
         outlineColumn.width = 180
-        outlineColumn.minWidth = 120
+        outlineColumn.minWidth = 125
         
         startColumn.title = "Start"
-        startColumn.minWidth = 120
+        startColumn.minWidth = 125
         startColumnCell.font =
-            NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .regular)
+            NSFont.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
         outlineView.addTableColumn(startColumn)
         finishColumn.title = "Finish"
-        finishColumn.minWidth = 120
+        finishColumn.minWidth = 125
         finishColumnCell.font =
-            NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .regular)
+            NSFont.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
         outlineView.addTableColumn(finishColumn)
         
         completionColumn.title = "Compl. (%)"
         completionColumn.width = 60
         completionColumnCell.alignment = .right
         completionColumnCell.font =
-            NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .regular)
+            NSFont.monospacedDigitSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
         outlineView.addTableColumn(completionColumn)
         
         attachmentColumn.title = "Assignments"
         outlineView.addTableColumn(attachmentColumn)
         
         detailsColumn.title = "Details"
-        detailsColumn.minWidth = 120
+        detailsColumn.minWidth = 125
         outlineView.addTableColumn(detailsColumn)
 
         dateFormatter.timeZone = Time.calendar.timeZone
