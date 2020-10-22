@@ -21,11 +21,9 @@
 		BF4CEFF021EA129500AB60E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */; };
 		BF55D57721D62D2F00051ACE /* ClassicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */; };
 		BF5A000E21EB89EF00E003CE /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5A000D21EB89EF00E003CE /* Support.swift */; };
-		BF5DB74D24CABAEF003C3265 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DB74A24CABAEB003C3265 /* Ganttis.xcframework */; };
-		BF5DB74E24CABAEF003C3265 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DB74A24CABAEB003C3265 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		BF5DB74F24CABAF4003C3265 /* Ganttis.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DB74A24CABAEB003C3265 /* Ganttis.xcframework */; };
-		BF5DB75024CABAF4003C3265 /* Ganttis.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF5DB74A24CABAEB003C3265 /* Ganttis.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF5FE06A236DD497006387A2 /* OutlineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE069236DD497006387A2 /* OutlineDataSource.swift */; };
+		BF7B22962541FE1700919A3E /* Ganttis in Frameworks */ = {isa = PBXBuildFile; productRef = BF7B22952541FE1700919A3E /* Ganttis */; };
+		BF7B22992541FE2800919A3E /* Ganttis in Frameworks */ = {isa = PBXBuildFile; productRef = BF7B22982541FE2800919A3E /* Ganttis */; };
 		BF91C59D21DFBD6D00521A99 /* VirtualizedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */; };
 		BFB5E61121F84FFA0026CEB8 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5E60F21F84FF90026CEB8 /* ScheduleViewController.swift */; };
 		BFB5E61221F84FFA0026CEB8 /* ScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFB5E61021F84FFA0026CEB8 /* ScheduleViewController.xib */; };
@@ -40,7 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF5DB74E24CABAEF003C3265 /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF5DB75024CABAF4003C3265 /* Ganttis.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +74,6 @@
 		BF4CEFEF21EA129500AB60E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF55D57621D62D2F00051ACE /* ClassicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicDataSource.swift; sourceTree = "<group>"; };
 		BF5A000D21EB89EF00E003CE /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
-		BF5DB74A24CABAEB003C3265 /* Ganttis.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Ganttis.xcframework; sourceTree = "<group>"; };
 		BF5FE069236DD497006387A2 /* OutlineDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineDataSource.swift; sourceTree = "<group>"; };
 		BF703E462353831E00BCC1E4 /* GanttisTouchDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GanttisTouchDemo.entitlements; sourceTree = "<group>"; };
 		BF91C59C21DFBD6D00521A99 /* VirtualizedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualizedDataSource.swift; sourceTree = "<group>"; };
@@ -93,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5DB74D24CABAEF003C3265 /* Ganttis.xcframework in Frameworks */,
+				BF7B22962541FE1700919A3E /* Ganttis in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5DB74F24CABAF4003C3265 /* Ganttis.xcframework in Frameworks */,
+				BF7B22992541FE2800919A3E /* Ganttis in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +109,7 @@
 				BF319FDC21BBFA4900FF9DBF /* GanttisDemo */,
 				BF319FF021BBFA7500FF9DBF /* GanttisTouchDemo */,
 				BF319FDB21BBFA4900FF9DBF /* Products */,
-				BFF1EA902362E4A700624DBE /* Frameworks */,
+				BF7B22972541FE2800919A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,10 +160,9 @@
 			path = GanttisTouchDemo;
 			sourceTree = "<group>";
 		};
-		BFF1EA902362E4A700624DBE /* Frameworks */ = {
+		BF7B22972541FE2800919A3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF5DB74A24CABAEB003C3265 /* Ganttis.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,6 +184,9 @@
 			dependencies = (
 			);
 			name = GanttisDemo;
+			packageProductDependencies = (
+				BF7B22952541FE1700919A3E /* Ganttis */,
+			);
 			productName = GanttisDemo;
 			productReference = BF319FDA21BBFA4900FF9DBF /* GanttisDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -208,6 +205,9 @@
 			dependencies = (
 			);
 			name = GanttisTouchDemo;
+			packageProductDependencies = (
+				BF7B22982541FE2800919A3E /* Ganttis */,
+			);
 			productName = GanttisTouchDemo;
 			productReference = BF319FEF21BBFA7500FF9DBF /* GanttisTouchDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -219,7 +219,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					BF319FD921BBFA4900FF9DBF = {
 						CreatedOnToolsVersion = 10.1;
@@ -248,6 +248,9 @@
 				Base,
 			);
 			mainGroup = BF319FCF21BBF9FF00FF9DBF;
+			packageReferences = (
+				BF7B22942541FE1700919A3E /* XCRemoteSwiftPackageReference "Ganttis" */,
+			);
 			productRefGroup = BF319FDB21BBFA4900FF9DBF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -328,6 +331,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -361,6 +365,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -725,6 +730,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF7B22942541FE1700919A3E /* XCRemoteSwiftPackageReference "Ganttis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DlhSoftTeam/Ganttis.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF7B22952541FE1700919A3E /* Ganttis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF7B22942541FE1700919A3E /* XCRemoteSwiftPackageReference "Ganttis" */;
+			productName = Ganttis;
+		};
+		BF7B22982541FE2800919A3E /* Ganttis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF7B22942541FE1700919A3E /* XCRemoteSwiftPackageReference "Ganttis" */;
+			productName = Ganttis;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF319FD021BBF9FF00FF9DBF /* Project object */;
 }
