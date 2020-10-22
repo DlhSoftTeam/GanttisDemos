@@ -286,7 +286,7 @@ var classicScrollableTimeline: TimeRange {
     return TimeRange(from: projectStart, to: projectStart.adding(days: 71))
 }
 
-let classicHourWidth = 4.2
+let classicHourWidth = 5.0
 let classicVisibilitySchedule = Schedule.fullWeek
 
 let classicScheduleHighlighters = [ScheduleTimeSelector(.weekends)]
