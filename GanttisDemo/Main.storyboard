@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -170,16 +170,16 @@
                     <window key="window" title="Ganttis demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="760" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="820" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="760" height="270"/>
+                        <value key="minSize" type="size" width="820" height="270"/>
                         <toolbar key="toolbar" implicitIdentifier="A8538606-7EF0-498A-8F5B-0471F4670ACA" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="o47-7Z-MRB">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="1D323F09-33A7-4B0F-B65A-C9B7B7AAE637" label="View • data source" paletteLabel="View • data source" sizingBehavior="auto" id="teK-1v-umA">
                                     <nil key="toolTip"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="S4k-8B-Af6">
                                         <rect key="frame" x="0.0" y="14" width="271" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="Oiz-zl-eMS">
                                             <font key="font" metaFont="system"/>
                                             <segments>
@@ -201,7 +201,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <popUpButtonCell key="cell" type="roundTextured" title="100%" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" id="qn6-te-sTi">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="menu"/>
                                             <menu key="menu" id="m9R-D9-vr8">
                                                 <items>
                                                     <menuItem title="100%" state="on" hidden="YES" id="e1u-l3-2kN">
@@ -224,7 +224,7 @@
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="EvE-Cp-upc">
                                         <rect key="frame" x="0.0" y="14" width="82" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="b5q-yf-CPe">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -237,7 +237,7 @@
                                 <toolbarItem implicitItemIdentifier="51B8270D-610C-4DAB-81A3-88C53C899509" label="Add" paletteLabel="Add" toolTip="Add item" image="NSAddTemplate" visibilityPriority="1" sizingBehavior="auto" id="gqs-JU-T5x">
                                     <button key="view" verticalHuggingPriority="750" id="ecb-oY-i0r">
                                         <rect key="frame" x="0.0" y="14" width="82" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MML-nt-DrY">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -250,7 +250,7 @@
                                 <toolbarItem implicitItemIdentifier="7E1AAB27-025E-4262-89B5-5645B8DD50AD" label="Remove" paletteLabel="Remove" toolTip="Remove selection" image="NSRemoveTemplate" sizingBehavior="auto" id="Ya1-KX-dzz">
                                     <button key="view" verticalHuggingPriority="750" id="uVg-Io-pZe">
                                         <rect key="frame" x="0.0" y="14" width="82" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRemoveTemplate" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dNI-1o-Olk">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -263,7 +263,7 @@
                                 <toolbarItem implicitItemIdentifier="F8C5980D-53CA-44F5-975B-BFB209F45CAC" label="Export" paletteLabel="Export" toolTip="Export PNG image" image="NSShareTemplate" sizingBehavior="auto" id="65E-zE-asa">
                                     <button key="view" toolTip="Save PNG image" verticalHuggingPriority="750" id="gOh-hJ-J6f">
                                         <rect key="frame" x="0.0" y="14" width="82" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSShareTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Bdf-gB-rnd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -277,7 +277,7 @@
                                     <nil key="toolTip"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="W4O-5r-ANc">
                                         <rect key="frame" x="0.0" y="14" width="137" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="W14-Vu-LNQ">
                                             <font key="font" metaFont="system"/>
                                             <segments>
@@ -296,7 +296,7 @@
                                     <nil key="toolTip"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="bI7-8Q-xbL">
                                         <rect key="frame" x="0.0" y="14" width="292" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="MkI-bk-A62">
                                             <font key="font" metaFont="system"/>
                                             <segments>
@@ -346,27 +346,27 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="GanttisDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1200" height="640"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1240" height="640"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YFc-Kj-MqD">
-                                <rect key="frame" x="0.0" y="0.0" width="1200" height="640"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1240" height="640"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ABg-mV-7OS" userLabel="Gantt Chart View">
-                                        <rect key="frame" x="0.0" y="0.0" width="880" height="640"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="920" height="640"/>
                                         <subviews>
                                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aka-hF-3wn" customClass="OutlineGanttChart" customModule="Ganttis">
-                                                <rect key="frame" x="0.0" y="0.0" width="880" height="640"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="920" height="640"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </customView>
                                             <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTP-BC-a8D" customClass="GanttChart" customModule="Ganttis">
-                                                <rect key="frame" x="0.0" y="0.0" width="880" height="640"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="920" height="640"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </customView>
                                         </subviews>
                                     </customView>
                                     <tabView type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="otH-J4-rAm" userLabel="Edit">
-                                        <rect key="frame" x="880" y="0.0" width="320" height="640"/>
+                                        <rect key="frame" x="920" y="0.0" width="320" height="640"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="tJI-ak-EH2"/>
                                         </constraints>
@@ -4284,11 +4284,11 @@
     <resources>
         <image name="DataSourceClassic" width="16" height="16"/>
         <image name="DataSourceVirtualized" width="16" height="16"/>
-        <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSPathTemplate" width="16" height="10"/>
-        <image name="NSRefreshTemplate" width="11" height="15"/>
-        <image name="NSRemoveTemplate" width="11" height="11"/>
-        <image name="NSShareTemplate" width="11" height="16"/>
+        <image name="NSAddTemplate" width="14" height="13"/>
+        <image name="NSPathTemplate" width="19" height="12"/>
+        <image name="NSRefreshTemplate" width="14" height="16"/>
+        <image name="NSRemoveTemplate" width="14" height="4"/>
+        <image name="NSShareTemplate" width="15" height="17"/>
         <image name="ThemeAqua" width="16" height="16"/>
         <image name="ThemeCustom" width="16" height="16"/>
         <image name="ThemeJewel" width="16" height="16"/>
