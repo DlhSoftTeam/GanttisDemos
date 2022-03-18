@@ -192,6 +192,6 @@ class ScheduleViewController: NSViewController, ExcludedTimeIntervalProvider {
     weak var observer: ScheduleViewObserver?
 }
 
-protocol ScheduleViewObserver: class {
+protocol ScheduleViewObserver: AnyObject {
     func scheduleDidChange(on controller: ScheduleViewController)
 }
