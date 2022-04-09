@@ -157,4 +157,12 @@ class ViewController: UIViewController, GanttChartItemObserver, GanttChartConten
             self.itemManager.collectionDidChange()
         }
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        if super.prefersStatusBarHidden { return true }
+        if #available(iOS 14.0, *) {
+            return ProcessInfo.processInfo.isiOSAppOnMac
+        }
+        return false
+    }
 }
